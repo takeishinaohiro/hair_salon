@@ -1,0 +1,12 @@
+$(function(){
+  $('.top2').click(function(){
+    console.log("apa");
+    $('.h-new-wrapper2').removeClass('none')
+    $('.h-new-wrapper1').addClass('none')
+  });
+  $('.top1').click(function(){
+    console.log("apa");
+    $('.h-new-wrapper1').removeClass('none')
+    $('.h-new-wrapper2').addClass('none')
+  });
+})

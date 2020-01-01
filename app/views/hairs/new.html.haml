@@ -1,0 +1,50 @@
+= form_with(model: User, local: true) do |f|
+  .top1
+    公開
+  .top2
+    非公開
+  .new-main
+    .h-new-wrapper1
+      .h-new-wrapper1__top
+        お客様公開情報
+      .category
+        = f.label :ヘア
+        = f.check_box :category,value:"1"
+        = f.label :ネイル
+        = f.check_box :category,value:"2"
+        = f.label :アイラッシュ
+        = f.check_box :category,value:"3"
+      .memo
+        = f.text_area :memo, autocomplete: "new-password",class:""
+      .image1
+        = f.label :image1, class: '' do
+          = f.file_field :image1, class: 'hidden'
+      .image2
+        = f.label :image2, class: '' do
+          = f.file_field :image2, class: 'hidden'
+      .image3
+        = f.label :image3, class: '' do
+          = f.file_field :image3, class: 'hidden'
+
+
+
+
+
+    .h-new-wrapper2.none
+      .h-new-wrapper2__top
+        お客様非公開情報
+      .memo
+        = f.text_area :memo, autocomplete: "new-password",class:""
+      .image3
+        = f.label :image4, class: '' do
+          = f.file_field :image4, class: 'hidden'
+      .day
+        != sprintf(f.date_select(:day, prompt:"--",use_month_numbers:true,selected: Date.today , start_year: 2020, end_year:2000,  date_separator:'%s'),'年','月')+'日'
+      .menber
+        = f.text_field :menber, autocomplete: "new-password",class:""
+      .money
+        %input{type: "number",name: "money",placeholder: "お支払金額",class:"num", min: "1"}
+        円
+      .menu
+        = f.text_area :menu, autocomplete: "new-password",class:""
+

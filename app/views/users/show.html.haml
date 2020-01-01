@@ -1,0 +1,26 @@
+.u-show-wrap
+  .u-show-wrap__top
+    = @user.name1
+  .u-show-wrap__sec
+    = @user.name2
+  .u-show-wrap__thi
+    = @user.birthday
+  .u-show-wrap__for
+    = @user.tel
+  .u-show-wrap__fiv
+    -if @user.station == nil
+      .none
+    - else
+      = @user.station
+  .u-show-wrap__six
+    -if @user.magazine == nil
+      .none
+    - else
+      = @user.magazine
+  .u-show-wrap__sev
+    -if @user.rash == nil
+      .none
+    - else
+      = @user.rash
+  =link_to hair_path(params[:id]), method: :post,class:"karute" do
+    カルテ登録

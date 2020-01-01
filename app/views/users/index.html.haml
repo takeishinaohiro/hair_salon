@@ -1,0 +1,24 @@
+.show-wrap
+  .show-content
+    .show-top
+      .show-top__left
+        お客様一覧
+      =link_to"",class:"show-top__center-left" do
+        カルテ一覧
+      =link_to new_user_path,class:"show-top__center-right" do
+        お客様登録
+      =link_to"",class:"show-top__right" do
+        お客様検索
+    - @users.each do |user|
+      .show-top__midle
+        .show-top__midle--left
+          No
+          = user.id
+        .show-top__midle--right
+          =link_to user_path(user.id),method: :get,class:"" do
+            .show-right-top
+              = user.name1
+              = user.name2
+          =link_to"",class:"" do
+            .show-right-bottom
+              最終来店日 20019/12/30

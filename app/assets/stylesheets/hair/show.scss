@@ -1,0 +1,105 @@
+.show-wrap{
+  background-image: url("/show-image.jpeg");
+  background-size: cover;
+  width: 100vw;
+  height: 100vh;
+
+  .show-content{
+    background-color: #fff;
+    width: 70%;
+    height: 100vh;
+    margin: 0 auto;
+    overflow: scroll;
+
+    .show-top{
+      width: 70%;
+      background-color: #fff;
+      height: 4.5rem;
+      position: fixed;
+      display: flex;
+
+      &__left{
+        width: 25%;
+        display: block;
+        line-height: 4.5rem;
+        color: #333;
+        border: #333 0.08rem solid;
+        text-align: center;
+        font-size: 1.3rem;
+      }
+      &__center-left{
+        width: 25%;
+        display: block;
+        line-height: 4.5rem;
+        color: #333;
+        border: #333 0.08rem solid;
+        text-align: center;
+        font-size: 1.3rem;
+        opacity: 0.4;
+
+        &:hover{
+          opacity: 1;
+        }
+      }
+      &__center-right{
+        width: 25%;
+        display: block;
+        line-height: 4.5rem;
+        color: #333;
+        border: #333 0.08rem solid;
+        text-align: center;
+        font-size: 1.3rem;
+        opacity: 0.4;
+
+
+        &:hover{
+          opacity: 1;
+        }
+      }
+      &__right{
+        width: 25%;
+        display: block;
+        line-height: 4.5rem;
+        color: #333;
+        border: #333 0.08rem solid;
+        text-align: center;
+        font-size: 1.3rem;
+        opacity: 0.4;
+
+
+        &:hover{
+          opacity: 1;
+        }
+      }
+    }
+    .show-top__midle{
+      width: 65%;
+      margin: 8rem auto 0 ;
+      background-color: #fff;
+      border: #333 0.08rem solid;
+      display: flex;
+      height: 8rem;
+
+      &--left{
+        font-size: 3rem;
+        line-height: 5rem;
+        margin: 2rem;
+      }
+      &--right{
+        width: 60%;
+        margin: 0 auto;
+        text-align: center;
+        font-size: 1.5rem;
+
+        .show-right-top{
+          color: #333;
+          margin: 1rem;
+        }
+        .show-right-bottom{
+          color: #333;
+          margin: 1.5rem;
+        }
+      }
+    }
+  }
+}
