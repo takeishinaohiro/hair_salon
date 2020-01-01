@@ -1,57 +1,99 @@
-.new-wrapper
-  .new-wrapper__main
-    = form_with(model: User, local: true) do |f|
-      .new-wrapper__main--first
-        .top
-          .left
-            氏名(漢字)
-          .right
-            [必須]
-        .bottom
-          = f.text_field :name1, autocomplete: "new-password",class:""
-          = f.text_field :name2, autocomplete: "new-password",class:""
-      .new-wrapper__main--second
-        .top
-          .left
-            氏名(カナ)
-          .right
-            [必須]
-        .bottom
-          = f.text_field :read_name1, autocomplete: "new-password",class:""
-          = f.text_field :read_name2, autocomplete: "new-password",class:""
-      .new-wrapper__main--third
-        .top
-          .left
-            TEL
-          .right
-            [必須]
-        .bottom
-          = f.text_field :tel, autocomplete: "new-password",class:""
-      .new-wrapper__main--for
-        .top
-          .left
-            生年月日
-          .right
-            [必須]
-        .bottom
-          != sprintf(f.date_select(:birthday, prompt:"--",use_month_numbers:true, start_year: 2020, end_year:1990,  date_separator:'%s'),'年','月')+'日'
-      .new-wrapper__main--five
-        .top
-          .left
-            最寄駅
-        .bottom
-          = f.text_field :station, autocomplete: "new-password",class:""
-      .new-wrapper__main--six
-        .top
-          .left
-            好きな雑誌
-        .bottom
-          = f.text_field :magazine, autocomplete: "new-password",class:""
-      .new-wrapper__main--seven
-        .top
-          .left
-            かぶれなど
-        .bottom
-          = f.text_field :rash, autocomplete: "new-password",class:""
-      = f.submit ""
+.new-wrap
+  .new-content
+    .new-top
+      =link_to users_path,class:"new-top__left" do
+        お客様一覧
+      =link_to "",class:"new-top__center-left" do
+        カルテ一覧
+      .new-top__center-right
+        お客様登録
+      =link_to"",class:"new-top__right" do
+        お客様検索
+    .new-wrapper
+      .new-wrapper__main
+        = form_with(model: User, local: true) do |f|
+          .new-wrapper__main--first
+            .top
+              .center
+                .left
+                  氏名　(漢字)
+                .right
+                  [必須]
+            .bottom
+              = f.text_field :name1, autocomplete: "new-password",class:"bottom__left"
+              = f.text_field :name2, autocomplete: "new-password",class:"bottom__right"
+
+
+
+
+
+          .new-wrapper__main--second
+            .top
+              .center
+                .left
+                  氏名　(カナ)
+                .right
+                  [必須]
+            .bottom
+              = f.text_field :read_name1, autocomplete: "new-password",class:"bottom__left"
+              = f.text_field :read_name2, autocomplete: "new-password",class:"bottom__right"
+
+
+
+
+
+          .new-wrapper__main--third
+            .top
+              .center
+                .left
+                  TEL
+                .right
+                  [必須]
+            .bottom
+              = f.phone_field :tel, autocomplete: "new-password",class:"bottom__left"
+
+
+
+
+
+
+
+          .new-wrapper__main--for
+            .top
+              .center
+                .left
+                  生年月日
+                .right
+                  [必須]
+            .bottom
+              != sprintf(f.date_select(:birthday, class:"bottom__left",prompt:"--",use_month_numbers:true, start_year: 2020, end_year:1990,  date_separator:'%s'),'年','月')+'日'
+
+
+          .new-wrapper__main--five
+            .top
+              .center
+                .left
+                  最寄駅
+            .bottom
+              = f.text_field :station, autocomplete: "new-password",class:"bottom__left"
+
+
+
+          .new-wrapper__main--six
+            .top
+              .center
+                .left
+                  好きな雑誌
+            .bottom
+              = f.text_field :magazine, autocomplete: "new-password",class:"bottom__left"
+
+
+          .new-wrapper__main--seven
+            .top
+              .center
+                .left
+                  かぶれなど
+            .bottom
+              = f.text_field :rash, autocomplete: "new-password",class:"bottom__left"
+          = f.submit "確認画面に進む",class:"lst-btn"
 

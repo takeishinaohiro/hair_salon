@@ -16,12 +16,14 @@ ActiveRecord::Schema.define(version: 2019_12_31_080844) do
     t.string "image1"
     t.string "image2"
     t.string "image3"
+    t.string "image4"
     t.string "day", null: false
     t.string "menber", null: false
-    t.string "money", null: false
+    t.integer "money", null: false
     t.string "menu", null: false
-    t.string "memo", null: false
-    t.string "category", null: false
+    t.string "memo1", null: false
+    t.string "memo2", null: false
+    t.integer "category", null: false
     t.bigint "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
