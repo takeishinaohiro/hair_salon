@@ -1,8 +1,12 @@
 .u-show-wrap
-  .u-show-wrap__top
-    = @user.name1
-  .u-show-wrap__sec
-    = @user.name2
+  .top-of
+    =link_to users_path,class:"modoru" do
+      <戻る
+    .u-show-wrap__top
+      = @user.name1
+      = @user.name2
+    =link_to hair_path(params[:id]), method: :post,class:"karute" do
+      カルテ登録
   .u-show-wrap__thi
     = @user.birthday
   .u-show-wrap__for
@@ -22,5 +26,19 @@
       .none
     - else
       = @user.rash
-  =link_to hair_path(params[:id]), method: :post,class:"karute" do
-    カルテ登録
+  .u-show-wrap__main
+    - @karutes.each do |karute|
+      =link_to edit_user_path(karute.id),class:"" do
+        .u-show-wrap__main--content
+          .left
+            =karute.day
+          .right
+            -if karute.category == 1
+              .category
+                ヘア
+            -elsif karute.category == 2
+              .category
+                ネイル
+            -else karute.category == 3
+              .category
+                アイラッシュ

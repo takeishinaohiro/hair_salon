@@ -1,0 +1,109 @@
+.edit-wrap
+  =link_to user_path(@karute.user_id),class:"edit-right" do
+    戻る
+  .edit-top
+    .edit-top__left
+      公開情報
+    .edit-top__right
+      非公開情報
+
+
+  .edit-open
+    .edit-open__top
+      ユーザー公開情報
+    .edit-open__first
+      .edit-open__first--top
+        カテゴリ
+      .edit-open__first--bottom
+        -if @karute.category == 1
+          .category
+            ヘア
+        -elsif @karute.category == 2
+          .category
+            ネイル
+        -else @karute.category == 3
+          .category
+
+
+    .edit-open__second
+      .edit-open__second--top
+        コメント
+      .edit-open__second--bottom
+        -if @karute.category == nil
+          .nil-content
+            ー
+        -else
+          =@karute.memo1
+
+
+    .edit-open__third
+      .edit-open__third--top
+        -if @karute.image1 == nil
+          .xxxxx
+        -else 
+          %img{src:@karute.image1,class:""}
+      .edit-open__third--bottom
+        Photo01
+
+        
+    .edit-open__for
+      .edit-open__for--top
+        -if @karute.image2 == nil
+          .yyyy
+        -else 
+          %img{src:@karute.image2,class:""}
+      .edit-open__for--bottom
+        Photo02
+
+
+    .edit-open__five
+      .edit-open__for--top
+        -if @karute.image2 == nil
+          .zzzz
+        -else 
+          %img{src:@karute.image2,class:""}
+      .edit-open__for--bottom
+        Photo03
+
+
+  .edit-close.none
+    .edit-close__top
+      ユーザー非公開情報
+
+
+    .edit-close__first
+      .edit-close__first--top
+        お会計金額
+      .edit-close__first--bottom
+        ¥
+        =@karute.money
+
+
+    .edit-close__second
+      .edit-close__second--top
+        メニュー＆薬剤情報
+      .edit-close__second--bottom
+        -if @karute.menu == nil
+          ー
+        -else
+          =@karute.menu
+
+
+    .edit-close__third
+      .edit-close__third--top
+        その他備考
+      .edit-close__third--bottom
+        -if @karute.memo2 == nil
+          aaaaaaaa
+        -else
+          =@karute.memo2
+      
+
+    .edit-close__for
+      .edit-close__for--top
+        -if @karute.image4 == nil
+          .zzzz
+        -else 
+          %img{src:@karute.image4,class:""}
+      .edit-close__for--bottom
+        非公開写真

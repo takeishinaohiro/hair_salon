@@ -1,3 +1,328 @@
+.karute-wrap{
+  display: flex;
+  width: 30%;
+  margin: 1rem auto 0;
+  justify-content: space-between;
+
+  .top1{
+    height: 3rem;
+    width: 50%;
+    background-color: rgb(168, 5, 5);
+    color: #fff;
+    text-align: center;
+    line-height: 3rem;
+    cursor: pointer;
+  }
+  .top2{
+    height: 3rem;
+    width: 50%;
+    background-color: rgb(0, 0, 0);
+    color: rgb(238, 36, 36);
+    text-align: center;
+    line-height: 3rem;
+    cursor: pointer;
+  }
+}
+.new-main{
+  width: 40%;
+  margin: 0 auto;
+  height: 100rem;
+  background-color: rgb(236, 234, 234);
+
+  .h-new-wrapper1{
+
+    &__top{
+      height: 4rem;
+      width: 100%;
+      background-color: rgb(168, 5, 5);
+      color: #fff;
+      text-align: center;
+      line-height: 4rem;
+      cursor: pointer;
+      margin: 1rem auto 0;
+      border: solid 0.01rem rgb(206, 206, 206);
+    }
+    .category{
+      width: 100%;
+      height: 7rem;
+      margin: 0 auto;
+
+      &__top{
+        height: 3.5rem;
+        background-color: rgb(168, 5, 5);
+        color: #fff;
+        text-align: center;
+        line-height: 3.5rem;
+        cursor: pointer;
+        margin: 0.001rem auto 0;
+        border: solid 0.01rem rgb(206, 206, 206);
+      }
+
+      &__bottom{
+        height: 3.5rem;
+        border: solid 0.01rem rgb(87, 86, 86);
+        background-color: #fff;
+        line-height: 3.5rem;
+        text-align: center;
+      }
+    }
+    .memo1{
+      width: 100%;
+      height: 15rem;
+      margin: 0.5rem auto;
+
+      &__top{
+        height: 3.5rem;
+        background-color: rgb(168, 5, 5);
+        color: #fff;
+        text-align: center;
+        line-height: 3.5rem;
+        cursor: pointer;
+        margin: 0.001rem auto 0;
+        border: solid 0.01rem rgb(206, 206, 206);
+      }
+
+      &__bottom{
+        height: 11.5rem;
+        border: solid 0.01rem rgb(87, 86, 86);
+        background-color: #fff;
+        line-height: 3.5rem;
+        text-align: center;
+
+        .last-memo{
+          width: 95%;
+          margin: 0 auto;
+          height: 11.2rem;
+          font-size: 1.3rem;
+        }
+      }
+    }
+  }
+  }
+  .h-new-wrapper2{
+    
+  &__top{
+    height: 4rem;
+    width: 100%;
+    background-color: rgb(0, 0, 0);
+    color: rgb(238, 36, 36);
+    text-align: center;
+    line-height: 4rem;
+    cursor: pointer;
+    margin: 1rem auto 0;
+    border: solid 0.01rem rgb(206, 206, 206);
+  }
+  .day{
+    height: 7rem;
+
+
+    &__top{
+    height: 3.5rem;
+    width: 100%;
+    background-color: rgb(0, 0, 0);
+    color: rgb(238, 36, 36);
+    text-align: center;
+    line-height: 4rem;
+    cursor: pointer;
+    margin: 1rem auto 0;
+    border: solid 0.01rem rgb(206, 206, 206);
+    }
+
+    &__bottom{
+      height: 4rem;
+      display: flex;
+      margin: 0 auto;
+      background-color: #fff;
+      border: solid 0.01rem #333;
+      line-height: 4rem;
+
+      #hair_day_1i{
+        height: 2rem;
+        width: 5rem;
+        margin: 1rem 0.1rem 0 1rem;
+      }
+      #hair_day_2i{
+        height: 2rem;
+        width: 5rem;
+        margin: 1rem 0.1rem 0 1rem;
+      }
+      #hair_day_3i{
+        height: 2rem;
+        width: 5rem;
+        margin: 1rem 0.1rem 0 1rem;
+    }
+  }
+  }
+  .name{
+    height: 7rem;
+
+
+    &__top{
+    height: 3.5rem;
+    width: 100%;
+    background-color: rgb(0, 0, 0);
+    color: rgb(238, 36, 36);
+    text-align: center;
+    line-height: 4rem;
+    cursor: pointer;
+    margin: 1rem auto 0;
+    border: solid 0.01rem rgb(206, 206, 206);
+    }
+
+    &__bottom{
+      height: 4rem;
+      background-color: #fff;
+      border: solid 0.01rem #333;
+      line-height: 4rem;
+      color: #333;
+      text-align: center;
+    }
+  }
+  .menber{
+    height: 7rem;
+
+
+    &__top{
+    height: 3.5rem;
+    width: 100%;
+    background-color: rgb(0, 0, 0);
+    color: rgb(238, 36, 36);
+    text-align: center;
+    line-height: 4rem;
+    cursor: pointer;
+    margin: 1rem auto 0;
+    border: solid 0.01rem rgb(206, 206, 206);
+    }
+
+    &__bottom{
+      height: 4rem;
+      background-color: #fff;
+      border: solid 0.01rem #333;
+      line-height: 4rem;
+      color: #333;
+      text-align: center;
+    }
+  }
+  .money{
+    height: 7rem;
+
+
+    &__top{
+    height: 3.5rem;
+    width: 100%;
+    background-color: rgb(0, 0, 0);
+    color: rgb(238, 36, 36);
+    text-align: center;
+    line-height: 4rem;
+    cursor: pointer;
+    margin: 1rem auto 0;
+    border: solid 0.01rem rgb(206, 206, 206);
+    }
+
+    &__bottom{
+      height: 4rem;
+      background-color: #fff;
+      border: solid 0.01rem #333;
+      line-height: 4rem;
+      color: #333;
+      text-align: center;
+    }
+  }
+
+
+  .menu{
+    height: 13.5rem;
+
+
+    &__top{
+    height: 3.5rem;
+    width: 100%;
+    background-color: rgb(0, 0, 0);
+    color: rgb(238, 36, 36);
+    text-align: center;
+    line-height: 4rem;
+    cursor: pointer;
+    margin: 1rem auto 0;
+    border: solid 0.01rem rgb(206, 206, 206);
+    }
+
+    &__bottom{
+      height: 10rem;
+      background-color: #fff;
+      border: solid 0.01rem #333;
+      line-height: 4rem;
+      color: #333;
+      text-align: center;
+
+      &--main{
+        height: 9rem;
+        margin-top: 0.5rem;
+        width: 95%;
+        margin: 0 auto;
+      }
+    }
+  }
+  .memo2{
+    height: 13.5rem;
+
+
+    &__top{
+    height: 3.5rem;
+    width: 100%;
+    background-color: rgb(0, 0, 0);
+    color: rgb(238, 36, 36);
+    text-align: center;
+    line-height: 4rem;
+    cursor: pointer;
+    margin: 1rem auto 0;
+    border: solid 0.01rem rgb(206, 206, 206);
+    }
+
+    &__bottom{
+      height: 10rem;
+      background-color: #fff;
+      border: solid 0.01rem #333;
+      line-height: 4rem;
+      color: #333;
+      text-align: center;
+
+      &--main{
+        height: 9rem;
+        margin-top: 0.5rem;
+        width: 95%;
+        margin: 0 auto;
+      }
+    }
+  }
+  .image4{
+    height: 7rem;
+
+
+    &__top{
+    height: 3.5rem;
+    width: 100%;
+    background-color: rgb(0, 0, 0);
+    color: rgb(238, 36, 36);
+    text-align: center;
+    line-height: 4rem;
+    cursor: pointer;
+    margin: 1rem auto 0;
+    border: solid 0.01rem rgb(206, 206, 206);
+    }
+
+    &__bottom{
+      height: 3.5rem;
+      background-color: #fff;
+      border: solid 0.01rem #333;
+      line-height: 4rem;
+      color: #333;
+      text-align: center;
+
+    }
+  }
+}
+
+
 .none{
   display: none;
 }

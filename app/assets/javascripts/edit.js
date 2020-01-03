@@ -1,0 +1,12 @@
+$(function(){
+  $('.edit-top__right').click(function(){
+    console.log("apa");
+    $('.edit-close').removeClass('none')
+    $('.edit-open').addClass('none')
+  });
+  $('.edit-top__left').click(function(){
+    console.log("apa");
+    $('.edit-open').removeClass('none')
+    $('.edit-close').addClass('none')
+  });
+})

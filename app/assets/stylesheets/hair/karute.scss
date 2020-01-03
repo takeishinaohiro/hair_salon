@@ -1,0 +1,257 @@
+.xxkarute-wrap{
+  background-image: url("/show-image.jpeg");
+  background-size: cover;
+  width: 100vw;
+  height: 100vh;
+
+  .karute-content{
+    background-color: #fff;
+    width: 70%;
+    height: 100vh;
+    margin: 0 auto;
+    overflow: scroll;
+
+    .karute-top{
+      width: 70%;
+      background-color: #fff;
+      height: 4.5rem;
+      position: fixed;
+      display: flex;
+
+      &__left{
+        width: 25%;
+        display: block;
+        line-height: 4.5rem;
+        color: #333;
+        border: #333 0.08rem solid;
+        text-align: center;
+        font-size: 1.3rem;
+        opacity: 0.4;
+
+        &:hover{
+          opacity: 1;
+        }
+      }
+      &__center-left{
+        width: 25%;
+        display: block;
+        line-height: 4.5rem;
+        color: #333;
+        border: #333 0.08rem solid;
+        text-align: center;
+        font-size: 1.3rem;
+
+
+      }
+      &__center-right{
+        width: 25%;
+        display: block;
+        line-height: 4.5rem;
+        color: #333;
+        border: #333 0.08rem solid;
+        text-align: center;
+        font-size: 1.3rem;
+        opacity: 0.4;
+
+
+        &:hover{
+          opacity: 1;
+        }
+      }
+      &__right{
+        width: 25%;
+        display: block;
+        line-height: 4.5rem;
+        color: #333;
+        border: #333 0.08rem solid;
+        text-align: center;
+        font-size: 1.3rem;
+        opacity: 0.4;
+
+
+        &:hover{
+          opacity: 1;
+        }
+      }
+    }
+    .xkarute-wrap{
+      width: 60%;
+      height: 50rem;
+      background-color: rgba(236, 235, 235, 0.582);
+      margin: 5rem auto;
+
+      .karute-main{
+        width: 98%;
+        margin: 0 auto;
+        background-color: #fff;
+        height: 50rem;
+      
+
+
+      &__number{
+        display: flex;
+        width: 70%;
+        margin: 0 auto;
+        padding: 1rem 0 0 0;
+        height: 3rem;
+        background-color: #fff;
+
+        .top-left{
+          height: 2.3rem;
+          width: 2.3rem;
+          background-color: #fff;
+          font-size: 2rem;
+          text-align: center;
+          line-height: 2.3rem;
+          border: solid 0.01rem #333;
+
+        }
+        .aa{
+          height: 2.3rem;
+          width: 2.3rem;
+          background-color: #fff;
+          font-size: 1.2rem;
+          text-align: center;
+          line-height: 2.3rem;
+          border: solid 0.01rem #333;
+        }
+        .bb{
+          height: 2.3rem;
+          width: 2.3rem;
+          background-color: #fff;
+          font-size: 1.2rem;
+          text-align: center;
+          line-height: 2.3rem;
+          border: solid 0.01rem #333;
+        }
+        .cc{
+          height: 2.3rem;
+          width: 2.3rem;
+          background-color: #fff;
+          font-size: 1.2rem;
+          text-align: center;
+          line-height: 2.3rem;
+          border: solid 0.01rem #333;
+        }
+        .dd{
+          height: 2.3rem;
+          width: 2.3rem;
+          background-color: #fff;
+          font-size: 1.2rem;
+          text-align: center;
+          line-height: 2.3rem;
+          border: solid 0.01rem #333;
+        }
+        .ee{
+          height: 2.3rem;
+          width: 2.3rem;
+          background-color: #fff;
+          font-size: 1.2rem;
+          text-align: center;
+          line-height: 2.3rem;
+          border: solid 0.01rem #333;
+        }
+        .ff{
+          height: 2.3rem;
+          width: 2.3rem;
+          background-color: #fff;
+          font-size: 1.2rem;
+          text-align: center;
+          line-height: 2.3rem;
+          border: solid 0.01rem #333;
+        }
+        .gg{
+          height: 2.3rem;
+          width: 2.3rem;
+          background-color: #fff;
+          font-size: 1.2rem;
+          text-align: center;
+          line-height: 2.3rem;
+          border: solid 0.01rem #333;
+        }
+        .hh{
+          height: 2.3rem;
+          width: 2.3rem;
+          background-color: #fff;
+          font-size: 1.2rem;
+          text-align: center;
+          line-height: 2.3rem;
+          border: solid 0.01rem #333;
+        }
+        .ii{
+          height: 2.3rem;
+          width: 2.3rem;
+          background-color: #fff;
+          font-size: 1.2rem;
+          text-align: center;
+          line-height: 2.3rem;
+          border: solid 0.01rem #333;
+        }
+        .top-right{
+          height: 2.3rem;
+          width: 2.3rem;
+          background-color: #fff;
+          font-size: 1.2rem;
+          text-align: center;
+          line-height: 2.3rem;
+          border: solid 0.01rem #333;
+        }
+      }
+    }
+      .karute-main__top{
+        width: 70%;
+        margin: 0 auto;
+        padding: 0 0 1rem;
+        border-bottom: rgb(68, 67, 67) solid 0.01rem;
+      }
+      .karute-main__main{
+          height: 50rem;
+          width: 98%;
+          margin: 0 auto;
+          background-color: rgb(255, 255, 255);
+
+        .karute-main__main--content{
+          height: 9rem;
+          width: 98%;
+          background-color: #fff;
+          border: solid 0.01rem #333;
+          margin: 2rem auto;
+
+          &--first{
+            margin: 0.5rem 2rem;
+            display: flex;
+
+            .right{
+              margin-left: 1rem;
+            }
+          }
+          &--second{
+            margin: 0.5rem 2rem;
+            display: flex;
+
+            .right{
+              margin-left: 1rem;
+            }
+          }
+          &--third{
+            margin: 0.5rem 2rem;
+            display: flex;
+
+            .right{
+              margin-left: 1rem;
+            }
+          }
+          &--for{
+            margin: 0.5rem 2rem;
+            display: flex;
+
+
+            .right{
+              margin-left: 1rem;
+            }
+          }
+        }
+      }
+    }
+  }
+}
