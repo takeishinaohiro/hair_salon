@@ -11,52 +11,109 @@
     background-color: rgba(255, 255, 255, 0.884);
     overflow: scroll;
 
+    &__header{
+      height: 70px;
+      line-height: 70px;
+      padding: 0 30px 0 30px;
+      display: flex;
+      background-color: #E1ECE5;
+      .header-left{
+        .salon-name{
+          font-size: 20px;
+        }
+      }
+      .header-right{
+        display: flex;
+        margin: 0 0 0 auto;
+        li{
+          padding-left: 30px;
+        }
+      }
+    }
+
     &__top{
       text-align: center;
       color: #333;
-      font-size: 2rem;
-      height: 4rem;
-      line-height: 4rem;
+      font-size: 1.5rem;
+      height: 8rem;
+      line-height: 8rem;
     }
-    .kannri{
-      text-align: center;
-      width: 40%;
-      margin: 0 auto;
-      display: block;
-      color: rgb(75, 54, 194);
-    }
-
 
     .content{
-      border: #333 0.2rem solid;
       margin: 1rem auto 0 ;
       width: 70%;
       height: 9rem;
       background-color: #fff;
       text-decoration: none;
-      border-radius: 8px;
+      padding: 2rem;
 
       &__top{
         color: #333;
         font-size: 1.3rem;
         text-align: center;
-        margin: 1rem;
         text-decoration: none;
+        display: flex;
+        .content__day{
+          color: #333;
+          font-size: 1.3rem;
+          text-align: center;
+          text-decoration: none;
+        }
+        .content__category{
+          color: #333;
+          font-size: 1rem;
+          text-align: center;
+          text-decoration: none;
+          padding-left: 30px;
+        }
       }
-      &__center{
+      &__text{
+        white-space: pre-wrap;
+      }
+      &__charge{
         color: #333;
-        font-size: 1.3rem;
-        text-align: center;
-        margin: 1rem;
-        text-decoration: none;
+        font-size: 1rem;
+        text-align: right;
+        padding-top: 10px;
       }
-      &__bottom{
-        color: #333;
-        font-size: 1.3rem;
-        text-align: center;
-        margin: 1rem;
-        text-decoration: none;
+    }
+
+    .footer{
+      height: 20vh;
+      color: #fff;
+      background-color:#333333;
+      opacity: 0.8;
+      display: flex;
+      padding: 0 30px 0 30px;
+      position: fixed;
+      bottom: 4vh;
+      width: 70%;
+      box-sizing: border-box;
+      .salon-name{
+        line-height: 20vh;
+        font-size: 20px;
       }
+      .contact{
+        margin: 0 0 0 auto;
+        padding-top: 3vh;
+        p{
+          margin-bottom: 10px;
+        }
+        li{
+          font-size: 12px;
+        }
+      }
+    }
+    .copyright{
+      height: 4vh;
+      line-height: 4vh;
+      background-color: #333333;
+      font-size: 0.5rem;
+      text-align: center;
+      color: #fff;
+      position: fixed;
+      bottom: 0;
+      width: 70%;
     }
   }
 }

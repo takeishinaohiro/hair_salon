@@ -9,9 +9,17 @@
     TODO with the prefix, should I group by selector or property for weight savings?
 */
 html{
-  color:#000;
+  color:#333;;
   background:#FFF;
+  font-family: 游ゴシック体, 'Yu Gothic', YuGothic, 'ヒラギノ角ゴシック Pro', 'Hiragino Kaku Gothic Pro', メイリオ, Meiryo, Osaka, 'ＭＳ Ｐゴシック', 'MS PGothic', sans-serif;
 }
+a{
+  cursor: pointer;
+}
+a:visited {
+  color: #333;;
+}
+
 /*
   TODO remove settings on BODY since we can't namespace it.
 */
