@@ -1,17 +1,5 @@
 .index-top
   .index-content
-  .index-content__header
-    .salon-name
-      サロン名
-    %ul.header-right
-      %li
-        =link_to"HOME", root_path, class:"home"
-      %li
-        =link_to"アクセス", root_path, class:"access"
-      %li
-        =link_to"ブログ", root_path, class:"blog"
-      
-
     .index-content__top
       最終来店日
     =link_to users_path, method: :get,class:"kannri" do
