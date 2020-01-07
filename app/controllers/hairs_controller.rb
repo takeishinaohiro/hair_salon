@@ -16,6 +16,8 @@ class HairsController < ApplicationController
     @user = Hair.new(karute_params)
     if @user.save
       redirect_to user_path(@user.user_id)
+    else 
+      redirect_to
     end
 
   end

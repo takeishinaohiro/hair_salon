@@ -37,7 +37,6 @@
 
 
 
-
     .h-new-wrapper2.none
       .h-new-wrapper2__top
         お客様非公開情報
@@ -45,7 +44,7 @@
         .day__top
           来店日
         .day__bottom
-          != sprintf(f.date_select(:day, prompt:"--",use_month_numbers:true,selected: Date.today , start_year: 2020, end_year:2000,  date_separator:'%s'),'年','月')+'日'
+          != sprintf(f.date_select(:day, prompt:"--",use_month_numbers:true,selected: Date.today , start_year: 2020, end_year:2000),'年','月')+'日'
       .name
         .name__top
           氏名

@@ -35,10 +35,13 @@
         border: #333 0.08rem solid;
         text-align: center;
         font-size: 1.3rem;
-        opacity: 0.4;
+        background-color: rgba(173, 173, 173, 0.363);
+        transition: .3s;
 
         &:hover{
-          opacity: 1;
+          opacity: 0.4;
+          transition: .3s;
+        
         }
       }
       &__center-right{
@@ -49,11 +52,14 @@
         border: #333 0.08rem solid;
         text-align: center;
         font-size: 1.3rem;
-        opacity: 0.4;
+        background-color: rgba(173, 173, 173, 0.363);
+        transition: .3s;
 
 
         &:hover{
-          opacity: 1;
+          opacity: 0.4;
+          transition: .3s;
+
         }
       }
       &__right{
@@ -64,11 +70,14 @@
         border: #333 0.08rem solid;
         text-align: center;
         font-size: 1.3rem;
-        opacity: 0.4;
+        background-color: rgba(173, 173, 173, 0.363);
+        transition: .3s;
 
 
         &:hover{
-          opacity: 1;
+          opacity: 0.4;
+          transition: .3s;
+
         }
       }
     }
