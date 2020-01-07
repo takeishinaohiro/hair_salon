@@ -1,14 +1,48 @@
 .index-top
   .index-content
+    .index-content__header
+      .header-left
+        =link_to"Salon Name", root_path, class:"salon-name"
+      %ul.header-right
+        %li
+          =link_to"HOME", root_path, class:"home"
+        %li
+          =link_to"アクセス", root_path, class:"access"
+        %li
+          =link_to"ブログ", root_path, class:"blog"
+        %li
+          =link_to"スタッフ用", users_path, method: :get, class:""
+
+
     .index-content__top
-      最終来店日
-    =link_to users_path, method: :get,class:"kannri" do
-      管理者ページ
-    =link_to"",class:"" do
-      .content
+      ご来店日
+
+    .content
+      =link_to root_path, class: "" do
         .content__top
-          2001/12/25
-        .content__center
-          カテゴリー
-        .content__bottom
-          担当 : ------
+          .content__day
+            2001/12/25
+          .content__category
+            カテゴリー : ヘアー
+        .content__text
+          いつもご来店ありがとうございます！
+          おまかせカラーということで、暗めだけど透明感のあるグレージュカラーに！
+          カットは少し軽くして、春らしく。
+        .content__charge
+          担当 : 田中
+
+
+    .footer
+      .salon-name
+        Salon Name
+      %ul.contact
+        %p
+          CONTACT US
+        %li.tel
+          0123 - 456 - 789
+        %li.mail
+          beauty.hair@mail.com
+        %li.address
+          東京都港区芝公園1-1-1
+    .copyright
+      © salon
