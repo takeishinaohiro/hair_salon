@@ -27,7 +27,7 @@
     - else
       = @user.rash
   .u-show-wrap__main
-    - @karutes.each do |karute|
+    - @karutes.reverse_each do |karute|
       =link_to edit_user_path(karute.id),class:"" do
         .u-show-wrap__main--content
           .left

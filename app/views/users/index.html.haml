@@ -9,6 +9,11 @@
         お客様登録
       =link_to"",class:"show-top__right" do
         お客様検索
+
+      =form_with(local: true, method: :get, class: "search-form") do |f|
+        = f.text_field :keyword, placeholder: "名前を検索する", class: "search-form__input"
+        = f.submit "探す", class: "search-btn"
+
     - @users.each do |user|
       .show-top__midle
         .show-top__midle--left
@@ -19,6 +24,10 @@
             .show-right-top
               = user.name1
               = user.name2
-          =link_to"",class:"" do
-            .show-right-bottom
-              最終来店日 20019/12/30
+          - @karutes = Hair.where(user_id: user.id).order(created_at: "desc")
+          - if @karutes.length != 0
+            =link_to edit_user_path(@karutes[0].id),class:"" do
+              .show-right-bottom
+                = @karutes[0].day
+                    
+                    
