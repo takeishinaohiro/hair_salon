@@ -7,12 +7,10 @@
         カルテ一覧
       =link_to new_user_path,class:"show-top__center-right" do
         お客様登録
-      =link_to"",class:"show-top__right" do
-        お客様検索
 
-      =form_with(local: true, method: :get, class: "search-form") do |f|
-        = f.text_field :keyword, placeholder: "名前を検索する", class: "search-form__input"
-        = f.submit "探す", class: "search-btn"
+    =form_with(local: true, method: :get, class: "search-form") do |f|
+      = f.text_field :keyword, placeholder: "名前を検索する", class: "search-form__input"
+      = f.submit "探す", class: "search-btn"
 
     - @users.each do |user|
       .show-top__midle

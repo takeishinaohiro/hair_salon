@@ -8,7 +8,6 @@ class User < ApplicationRecord
       User.all
     end
   end
-  end
 
   def self.search(search)
     return User.all unless search

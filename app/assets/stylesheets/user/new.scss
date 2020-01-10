@@ -19,7 +19,7 @@
       display: flex;
 
       &__left{
-        width: 25%;
+        width: 34%;
         display: block;
         line-height: 4.5rem;
         color: #333;
@@ -36,7 +36,7 @@
         }
       }
       &__center-left{
-        width: 25%;
+        width: 33%;
         display: block;
         line-height: 4.5rem;
         color: #333;
@@ -53,32 +53,13 @@
         }
       }
       &__center-right{
-        width: 25%;
+        width: 33%;
         display: block;
         line-height: 4.5rem;
         color: #333;
         border: #333 0.08rem solid;
         text-align: center;
         font-size: 1.3rem;
-      }
-      &__right{
-        width: 25%;
-        display: block;
-        line-height: 4.5rem;
-        color: #333;
-        border: #333 0.08rem solid;
-        text-align: center;
-        font-size: 1.3rem;
-        background-color: rgba(173, 173, 173, 0.363);
-        transition: .3s;
-
-
-
-        &:hover{
-          opacity: 0.4;
-          transition: .3s;
-
-        }
       }
     }
     .new-wrapper{
