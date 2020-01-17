@@ -1,30 +1,38 @@
 .u-show-wrap
   .top-of
     =link_to users_path,class:"modoru" do
-      <戻る
+      戻る
     .u-show-wrap__top
       = @user.name1
       = @user.name2
     =link_to hair_path(params[:id]), method: :post,class:"karute" do
       カルテ登録
   .u-show-wrap__thi
+    生年月日:
     = @user.birthday
   .u-show-wrap__for
+    電話番号:
     = @user.tel
   .u-show-wrap__fiv
     -if @user.station == nil
-      .none
+      最寄駅:
+      なし
     - else
+      最寄駅:
       = @user.station
   .u-show-wrap__six
     -if @user.magazine == nil
-      .none
+      好きな雑誌:
+      なし
     - else
+      好きな雑誌:
       = @user.magazine
   .u-show-wrap__sev
     -if @user.rash == nil
-      .none
+      かぶれなど:
+      なし
     - else
+      かぶれなど:
       = @user.rash
   .u-show-wrap__main
     - @karutes.reverse_each do |karute|
