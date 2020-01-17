@@ -15,7 +15,7 @@
       - @karutes.reverse_each do |karute|
         - if @karutes.length != 0
           .content
-            =link_to root_path, class: "" do
+            =link_to open_user_path(karute.id), class: "" do
               .content__top
                 .content__day
                   =karute.day

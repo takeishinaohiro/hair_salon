@@ -1,8 +1,8 @@
 .u-show-wrap{
   width: 60%;
-  height: 100rem;
+  height: auto;
   margin: 0 auto;
-  background-color: rgb(0, 0, 0);
+  background-color: #fff;
 
 
   .top-of{
@@ -10,16 +10,16 @@
     width: 80%;
     justify-content: space-between;
     height: 5rem;
-    background-color: rgb(0, 0, 0);
+    background-color: #fff;
     margin: 2rem auto 0;
 
     .modoru{
       font-size: 1.3rem;
-      color: #fff;
+      color: #333;
       height: 2rem;
       margin: 2rem 0 0 0;
       transition: .3s;
-      border-bottom: 2px solid #fff;
+      border-bottom: 2px solid #333;
 
 
       &:hover{
@@ -30,14 +30,14 @@
       font-size: 2rem;
       line-height: 5rem;
       font-weight: bold;
-      color: #fff;
+      color: #333;
     }
     .karute{
       font-size: 1.3rem;
-      color: #fff;
+      color: #333;
       height: 2rem;
       margin: 2rem 0 0 0;
-      border-bottom: 2px solid #fff;
+      border-bottom: 2px solid #333;
       transition: .3s;
 
 
@@ -54,8 +54,8 @@
     text-align: center;
     line-height: 4rem;
     font-size: 1.4rem;
-    border-bottom: 2px solid #fff;
-    background-color: rgb(0, 0, 0);
+    border-bottom: 2px solid #333;
+    background-color: #fff;
     color: #fff;
 
 
@@ -68,9 +68,9 @@
     text-align: center;
     line-height: 4rem;
     font-size: 1.4rem;
-    border-bottom: 2px solid #fff;
-    background-color: rgb(0, 0, 0);
-    color: #fff;
+    border-bottom: 2px solid #333;
+    background-color: #fff;
+    color: #333;
   }
 
 
@@ -81,8 +81,8 @@
     text-align: center;
     line-height: 4rem;
     font-size: 1.4rem;
-    border-bottom: 2px solid #fff;
-    background-color: rgb(0, 0, 0);
+    border-bottom: 2px solid #333;
+    background-color: #fff;
     color: #fff;
   }
 
@@ -93,9 +93,9 @@
     text-align: center;
     line-height: 4rem;
     font-size: 1.4rem;
-    border-bottom: 2px solid #fff;
-    background-color: rgb(0, 0, 0);
-    color: #fff;
+    border-bottom: 2px solid #333;
+    background-color: #fff;
+    color: #333;
   }
 
 
@@ -106,9 +106,9 @@
     text-align: center;
     line-height: 4rem;
     font-size: 1.4rem;
-    border-bottom: 2px solid #fff;
-    background-color: rgb(0, 0, 0);
-    color: #fff;
+    border-bottom: 2px solid #333;
+    background-color: #fff;
+    color: #333;
   }
   .u-show-wrap__main{
     margin: 2rem 0 2rem 0 ;
@@ -119,8 +119,8 @@
       display: flex;
       height: 4rem;
       line-height: 4rem;
-      border: solid 0.01rem #333;
-      background-color: #fff;
+      border: solid 0.01rem #fff;
+      background-color: #333;
       transition: .3s;
 
       &:hover{
@@ -131,11 +131,11 @@
 
       .left{
         margin: 0 2rem;
-        color: #333;
+        color: #fff;
       }
       .right{
         margin: 0 2rem;
-        color: #333;
+        color: #fff;
 
       }
     }

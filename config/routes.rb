@@ -4,6 +4,9 @@ Rails.application.routes.draw do
     collection do
       get 'search'
     end
+    member do
+      get 'open', to: 'users#open'
+    end
   end
   root 'hairs#index'
   get     'login',   to: 'sessions#login'

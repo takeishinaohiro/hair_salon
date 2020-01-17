@@ -87,7 +87,10 @@
           = f.label :image4, class: '' do
             = f.file_field :image4, class:'hidden'
 
-
     = f.hidden_field :user_id ,value: params[:id]
-    = f.submit "登録する",class:"lst-btn"
+    = f.submit "登録する",class:"last-btn"
+
+    =link_to root_path, class:"remove__bottom" do
+      .remove
+        一覧にもどる
 

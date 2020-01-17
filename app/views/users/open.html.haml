@@ -1,14 +1,8 @@
 .edit-wrap
-  .edit-top
-    .edit-top__left
-      公開情報
-    .edit-top__right
-      非公開情報
-
-
   .edit-open
     .edit-open__top
-      ユーザー公開情報
+      = @karute.day
+      情報
     .edit-open__first
       .edit-open__first--top
         カテゴリ
@@ -32,7 +26,8 @@
           ご来店ありがとうございました！
         -else
           ご来店ありがとうございました！
-          =@karute.memo1
+          %li.second-text
+            =@karute.memo1
 
 
     .edit-open__third
@@ -63,49 +58,6 @@
           %img{src:@karute.image2,class:""}
       .edit-open__for--bottom
         Photo03
-
-
-  .edit-close.none
-    .edit-close__top
-      ユーザー非公開情報
-
-
-    .edit-close__first
-      .edit-close__first--top
-        お会計金額
-      .edit-close__first--bottom
-        ¥
-        =@karute.money
-
-
-    .edit-close__second
-      .edit-close__second--top
-        メニュー＆薬剤情報
-      .edit-close__second--bottom
-        -if @karute.menu == nil
-          ー
-        -else
-          =@karute.menu
-
-
-    .edit-close__third
-      .edit-close__third--top
-        その他備考
-      .edit-close__third--bottom
-        -if @karute.memo2 == nil
-        -else
-          =@karute.memo2
-      
-
-    .edit-close__for
-      .edit-close__for--top
-        -if @karute.image4 == nil
-          .zzzz
-        -else 
-          %img{src:@karute.image4,class:""}
-      .edit-close__for--bottom
-        非公開写真
-
-  =link_to user_path(@karute.user_id),class:"edit-right" do
-    .remove
-      ユーザー情報に戻る
+    =link_to root_path, class:"remove__bottom" do
+      .remove
+        一覧にもどる

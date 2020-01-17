@@ -31,4 +31,8 @@ class UsersController < ApplicationController
   def search
     @tweets = User.search(params[:keyword])
   end
+
+  def open
+    @karute = Hair.find(params.permit(:id).values[0])
+  end
 end

@@ -26,7 +26,7 @@
 .new-main{
   width: 40%;
   margin: 0 auto;
-  height: 100rem;
+  height: 45rem;
   background-color: rgb(236, 234, 234);
 
   .h-new-wrapper1{
@@ -320,6 +320,18 @@
 
     }
   }
+}
+.last-btn{
+  height: 3rem;
+  background-color: #333;
+  line-height: 3rem;
+  color: #fff;
+  text-align: center;
+  width: 100px;
+  margin: 2rem auto;
+  text-align: center;
+  display: block;
+  border-radius: 10px;
 }
 
 

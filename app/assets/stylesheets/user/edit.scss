@@ -68,8 +68,9 @@
     &__second{
       width: 80%;
       margin: 2rem auto;
-      height: 7rem;
+      height: 15rem;
       border: solid 0.01rem rgba(151, 150, 150, 0.322);
+      line-height: 2rem;
 
       &--top{
         height: 3.5rem;
@@ -81,8 +82,13 @@
 
       &--bottom{
         text-align: center;
-        line-height: 3.5rem;
+        line-height: 1.5rem;
         font-size: 1.2rem;
+        margin-top: 2rem;
+
+        .second-text{
+          text-align: left;
+        }
       }
     }
     &__third{
