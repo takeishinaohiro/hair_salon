@@ -1,6 +1,8 @@
 class HairsController < ApplicationController
   def index
-
+    @users = User.all
+    @owner = @users[0]
+    @karutes = Hair.all
   end
 
   def karute

@@ -6,6 +6,9 @@ Rails.application.routes.draw do
     end
   end
   root 'hairs#index'
+  get     'login',   to: 'sessions#login'
+  post    'login',   to: 'sessions#login'
+
   resources :hairs, only: [:index,:create,:new,] do
     member do
       post 'new', to: 'hairs#new'
