@@ -1,111 +1,88 @@
-.edit-wrap
-  .edit-top
-    .edit-top__left
-      公開情報
-    .edit-top__right
-      非公開情報
-
-
-  .edit-open
-    .edit-open__top
+.wrap
+  .header
+    =link_to root_path,class:"header__tittle" do
+      Hairsalon
+    .l-drawer
+      %input#drawerCheckbox.l-drawer__checkbox{type: "checkbox"}
+      %label.l-drawer__icon{for: "drawerCheckbox"}
+        %span.l-drawer__icon-parts
+      %label.l-drawer__overlay{for: "drawerCheckbox"}
+      %nav.l-drawer__menu
+        %ul
+          %li.l-drawer__item
+            .ld-btn.mission-btn
+              =link_to users_path,class:"item-text" do
+                お客様一覧
+          %li.l-drawer__item
+            .ld-btn.service-btn
+              =link_to new_user_path,class:"item-text" do
+                お客様登録
+          %li.l-drawer__item
+            .ld-btn.service-btn
+              =link_to karute_hairs_path,class:"item-text" do
+                カルテ一覧
+  .content
+    .content__tittle2
       ユーザー公開情報
-    .edit-open__first
-      .edit-open__first--top
-        カテゴリ
-      .edit-open__first--bottom
-        -if @karute.category == 1
-          .category
-            ヘア
-        -elsif @karute.category == 2
-          .category
-            ネイル
-        -else @karute.category == 3
-          .category
-
-
-    .edit-open__second
-      .edit-open__second--top
+    .form
+      .form__open
+        来店日
+      .form__bottom
+        =@karute.day
+      .form__open
         コメント
-      .edit-open__second--bottom
+      .form__bottom
         -if @karute.category == nil
-          .nil-content
-          ご来店ありがとうございました！
+          ー
         -else
-          ご来店ありがとうございました！
           =@karute.memo1
 
-
-    .edit-open__third
-      .edit-open__third--top
+      .form__bottom
         -if @karute.image1 == nil
-          .xxxxx
+          .form__bottom--img
+            NO IMAGE
         -else 
           %img{src:@karute.image1,class:""}
-      .edit-open__third--bottom
-        Photo01
 
-        
-    .edit-open__for
-      .edit-open__for--top
+      .form__bottom
         -if @karute.image2 == nil
-          .yyyy
+          .form__bottom--img
+            NO IMAGE
         -else 
           %img{src:@karute.image2,class:""}
-      .edit-open__for--bottom
-        Photo02
-
-
-    .edit-open__five
-      .edit-open__for--top
-        -if @karute.image2 == nil
-          .zzzz
-        -else 
-          %img{src:@karute.image2,class:""}
-      .edit-open__for--bottom
-        Photo03
-
-
-  .edit-close.none
-    .edit-close__top
-      ユーザー非公開情報
-
-
-    .edit-close__first
-      .edit-close__first--top
+    .content__tittle3
+      ユーザー公開情報
+    .form
+      .form__tittle
         お会計金額
-      .edit-close__first--bottom
+      .form__bottom
         ¥
         =@karute.money
-
-
-    .edit-close__second
-      .edit-close__second--top
+      
+      .form__tittle
         メニュー＆薬剤情報
-      .edit-close__second--bottom
+      .form__bottom
         -if @karute.menu == nil
           ー
         -else
           =@karute.menu
 
-
-    .edit-close__third
-      .edit-close__third--top
+      .form__tittle
         その他備考
-      .edit-close__third--bottom
+      .form__bottom
         -if @karute.memo2 == nil
+          ー
         -else
           =@karute.memo2
-      
 
-    .edit-close__for
-      .edit-close__for--top
+      .form__bottom
         -if @karute.image4 == nil
-          .zzzz
+          .form__bottom--img
+            NO IMAGE
         -else 
           %img{src:@karute.image4,class:""}
-      .edit-close__for--bottom
-        非公開写真
 
-  =link_to user_path(@karute.user_id),class:"edit-right" do
-    .remove
-      ユーザー情報に戻る
+      =link_to user_path(@karute.user_id),class:"" do
+        .form__submit
+          戻る
+

@@ -1,90 +1,52 @@
-.new-wrap
-  .new-content
-    .new-top
-      =link_to users_path,class:"new-top__left" do
-        お客様一覧
-      =link_to karute_hairs_path,class:"new-top__center-left" do
-        カルテ一覧
-      .new-top__center-right
-        お客様登録
-    .new-wrapper
-      .new-wrapper__main
-        = form_with(model: User, local: true) do |f|
-          .new-wrapper__main--first
-            .top
-              .center
-                .left
-                  氏名　(漢字)
-                .right
-                  [必須]
-            .bottom
-              = f.text_field :name1, autocomplete: "new-password",class:"bottom__left"
-              = f.text_field :name2, autocomplete: "new-password",class:"bottom__right"
+.wrap
+  .header
+    =link_to root_path,class:"header__tittle" do
+      Hairsalon
+    .l-drawer
+      %input#drawerCheckbox.l-drawer__checkbox{type: "checkbox"}
+      %label.l-drawer__icon{for: "drawerCheckbox"}
+        %span.l-drawer__icon-parts
+      %label.l-drawer__overlay{for: "drawerCheckbox"}
+      %nav.l-drawer__menu
+        %ul
+          %li.l-drawer__item
+            .ld-btn.mission-btn
+              =link_to users_path,class:"item-text" do
+                お客様一覧
+          %li.l-drawer__item
+            .ld-btn.service-btn
+              =link_to karute_hairs_path,class:"item-text" do
+                カルテ一覧
+  .content
+    .content__tittle
+      新規登録
+    = form_with(model: User, local: true) do |f|
+      .form
+        .form__tittle
+          氏名　(漢字)
+        .form__bottom
+          = f.text_field :name1, autocomplete: "new-password",class:"form__bottom--left"
+          = f.text_field :name2, autocomplete: "new-password",class:"form__bottom--right"
 
+        .form__tittle
+          氏名　(カナ)
+        .form__bottom
+          = f.text_field :read_name1, autocomplete: "new-password",class:"form__bottom--left"
+          = f.text_field :read_name2, autocomplete: "new-password",class:"form__bottom--right"
 
+        .form__tittle
+          TEL
+        .form__bottom
+          = f.phone_field :tel, autocomplete: "new-password",class:"form__bottom--tel"
 
+        .form__tittle
+          生年月日
+        .form__bottom
+          != sprintf(f.date_select(:birthday, class:"form__bottom--birthday",prompt:"--",use_month_numbers:true, start_year: 2020, end_year:1990,  date_separator:'%s'),'年','月')+'日'
 
-
-          .new-wrapper__main--second
-            .top
-              .center
-                .left
-                  氏名　(カナ)
-                .right
-                  [必須]
-            .bottom
-              = f.text_field :read_name1, autocomplete: "new-password",class:"bottom__left"
-              = f.text_field :read_name2, autocomplete: "new-password",class:"bottom__right"
-
-
-
-
-
-          .new-wrapper__main--third
-            .top
-              .center
-                .left
-                  TEL
-                .right
-                  [必須]
-            .bottom
-              = f.phone_field :tel, autocomplete: "new-password",class:"bottom__left"
-
-
-          .new-wrapper__main--for
-            .top
-              .center
-                .left
-                  生年月日
-                .right
-                  [必須]
-            .bottom
-              != sprintf(f.date_select(:birthday, class:"bottom__left",prompt:"--",use_month_numbers:true, start_year: 2020, end_year:1990,  date_separator:'%s'),'年','月')+'日'
-          .new-wrapper__main--five
-            .top
-              .center
-                .left
-                  最寄駅
-            .bottom
-              = f.text_field :station, autocomplete: "new-password",class:"bottom__left"
-
-
-
-          .new-wrapper__main--six
-            .top
-              .center
-                .left
-                  好きな雑誌
-            .bottom
-              = f.text_field :magazine, autocomplete: "new-password",class:"bottom__left"
-
-
-          .new-wrapper__main--seven
-            .top
-              .center
-                .left
-                  かぶれなど
-            .bottom
-              = f.text_field :rash, autocomplete: "new-password",class:"bottom__left"
-          = f.submit "確認画面に進む",class:"lst-btn"
+        .form__tittle
+          過去に薬剤でのかぶれなどはありますか？
+        .form__bottom
+          = f.text_field :rash, autocomplete: "new-password",class:"form__bottom--rash"
+        = f.submit "登録する",class:"form__submit"
 

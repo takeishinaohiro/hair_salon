@@ -1,52 +1,86 @@
-.u-show-wrap
-  .top-of
-    =link_to users_path,class:"modoru" do
-      戻る
-    .u-show-wrap__top
-      = @user.name1
-      = @user.name2
-    =link_to hair_path(params[:id]), method: :post,class:"karute" do
+.wrap
+  .header
+    =link_to root_path,class:"header__tittle" do
+      Hairsalon
+    .l-drawer
+      %input#drawerCheckbox.l-drawer__checkbox{type: "checkbox"}
+      %label.l-drawer__icon{for: "drawerCheckbox"}
+        %span.l-drawer__icon-parts
+      %label.l-drawer__overlay{for: "drawerCheckbox"}
+      %nav.l-drawer__menu
+        %ul
+          %li.l-drawer__item
+            .ld-btn.mission-btn
+              =link_to users_path,class:"item-text" do
+                お客様一覧
+          %li.l-drawer__item
+            .ld-btn.service-btn
+              =link_to new_user_path,class:"item-text" do
+                お客様登録
+          %li.l-drawer__item
+            .ld-btn.service-btn
+              =link_to karute_hairs_path,class:"item-text" do
+                カルテ一覧
+  .name
+    = @user.name1
+    = @user.name2
+
+  .karute
+    =link_to hair_path(params[:id]), method: :post,class:"karute-btn" do
       カルテ登録
-  .u-show-wrap__thi
-    生年月日:
-    = @user.birthday
-  .u-show-wrap__for
-    電話番号:
-    = @user.tel
-  .u-show-wrap__fiv
-    -if @user.station == nil
-      最寄駅:
-      なし
-    - else
-      最寄駅:
-      = @user.station
-  .u-show-wrap__six
-    -if @user.magazine == nil
-      好きな雑誌:
-      なし
-    - else
-      好きな雑誌:
-      = @user.magazine
-  .u-show-wrap__sev
-    -if @user.rash == nil
-      かぶれなど:
-      なし
-    - else
-      かぶれなど:
-      = @user.rash
-  .u-show-wrap__main
+
+  .pro
+    .pro--text
+      【生年月日】
+      %span
+        = @user.birthday
+
+    .pro--text
+      【電話番号】
+      %span
+        = @user.tel
+
+    .pro--text
+      【薬剤などのかぶれ経験】
+      %span
+        -if @user.rash == nil
+          なし
+        - else
+          = @user.rash
+
+  .content
     - @karutes.reverse_each do |karute|
       =link_to edit_user_path(karute.id),class:"" do
-        .u-show-wrap__main--content
-          .left
-            =karute.day
-          .right
-            -if karute.category == 1
-              .category
-                ヘア
-            -elsif karute.category == 2
-              .category
-                ネイル
-            -else karute.category == 3
-              .category
-                アイラッシュ
+        .content__main
+          .content__main--left
+            【最終来店日】
+            %span
+              =karute.day
+
+          .content__main--left
+            【非公開画像】
+            %span
+              -if karute.image4 = nil
+                %span
+                  ー
+              - else
+                %span
+                  ◯
+            
+          .content__main--left
+            【コメント】
+            -if karute.memo1
+              %span
+                ー
+            - else
+              %span
+                ◯
+
+          .content__main--left
+            【メニュー&薬剤情報】
+            -if karute.menu
+              %span
+                ー
+            - else
+              %span
+                ◯

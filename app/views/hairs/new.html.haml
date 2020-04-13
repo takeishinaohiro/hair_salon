@@ -1,96 +1,76 @@
-= form_with(model: Hair, local: true) do |f|
-  .karute-wrap
-    .top1
-      公開
-    .top2
-      非公開
-  .new-main
-    .h-new-wrapper1
-      .h-new-wrapper1__top
-        お客様公開情報
-      .category
-        .category__top
-          カテゴリ
-        .category__bottom
-          ヘア
-          = f.radio_button :category,"1"
-          ネイル
-          = f.radio_button :category,"2"
-          アイラッシュ
-          = f.radio_button :category,"3"
-      .memo1
-        .memo1__top
-          コメント
-        .memo1__bottom
-          = f.text_area :memo1, autocomplete: "new-password",class:"last-memo"
-      .image1
-        = f.label :image1, class: '' do
-          = f.file_field :image1, class: 'hidden'
-      .image2
-        = f.label :image2, class: '' do
-          = f.file_field :image2, class: 'hidden'
-      .image3
-        = f.label :image3, class: '' do
-          = f.file_field :image3, class: 'hidden'
-
-
-
-
-
-    .h-new-wrapper2.none
-      .h-new-wrapper2__top
-        お客様非公開情報
-      .day
-        .day__top
+.wrap
+  .header
+    =link_to root_path,class:"header__tittle" do
+      Hairsalon
+    .l-drawer
+      %input#drawerCheckbox.l-drawer__checkbox{type: "checkbox"}
+      %label.l-drawer__icon{for: "drawerCheckbox"}
+        %span.l-drawer__icon-parts
+      %label.l-drawer__overlay{for: "drawerCheckbox"}
+      %nav.l-drawer__menu
+        %ul
+          %li.l-drawer__item
+            .ld-btn.mission-btn
+              =link_to users_path,class:"item-text" do
+                お客様一覧
+          %li.l-drawer__item
+            .ld-btn.service-btn
+              =link_to new_user_path,class:"item-text" do
+                お客様登録
+          %li.l-drawer__item
+            .ld-btn.service-btn
+              =link_to karute_hairs_path,class:"item-text" do
+                カルテ一覧
+  .content
+    .content__tittle
+      カルテ登録
+    = form_with(model: Hair, local: true) do |f|
+      .form
+        .form__open
           来店日
-        .day__bottom
-          != sprintf(f.date_select(:day, prompt:"--",use_month_numbers:true,selected: Date.today , start_year: 2020, end_year:2000),'年','月')+'日'
-      .name
-        .name__top
-          氏名
-        .name__bottom
-          =@user.name1
-          =@user.name2
+        .form__bottom
+          != sprintf(f.date_select(:day,class:"form__bottom--birthday", prompt:"--",use_month_numbers:true,selected: Date.today , start_year: 2020, end_year:2020),'年','月')+'日'
+        .form__open
+          コメント
+        .form__bottom
+          = f.text_area :memo1, autocomplete: "new-password",class:"form__bottom--memo"
+        .form__open
+          Photo01
+        .form__bottom
+          = f.label :image1, class: 'form__bottom--img' do
+            NO IMAGE
+            = f.file_field :image1, class: 'img-file'
 
+        .form__open
+          Photo02
+        .form__bottom
+          = f.label :image2, class: 'form__bottom--img' do
+            NO IMAGE
+            = f.file_field :image2, class: 'img-file'
 
-      .menber
-        .menber__top
-          担当
-        .menber__bottom
-          = f.text_field :menber,class:""
-
-
-      .money
-        .money__top
+        .form__tittle
           お会計金額
-        .money__bottom
-          = f.number_field :money,class:"", min: "1"
-          円
-      .menu
-        .menu__top
+        .form__bottom
+          = f.number_field :money,class:"form__bottom--tel", min: "1"
+        
+
+        .form__tittle
           メニュー&薬剤情報
-        .menu__bottom
-          = f.text_area :menu, autocomplete: "new-password",class:"menu__bottom--main"
+        .form__bottom
+          = f.text_area :menu, autocomplete: "new-password",class:"form__bottom--memo"
 
 
-      .memo2
-        .memo2__top
+        .form__tittle
           その他備考
-        .memo2__bottom
-          = f.text_area :memo2, autocomplete: "new-password",class:"memo2__bottom--main"
+        .form__bottom
+          = f.text_area :memo2, autocomplete: "new-password",class:"form__bottom--memo"
 
+        .form__tittle
+          非公開画像
+        .form__bottom
+          = f.label :image4, class: 'form__bottom--img' do
+            NO IMAGE
+            = f.file_field :image4, class:'img-file'
 
-      .image4
-        .image4__top
-          非公開写真
-        .image4__bottom
-          = f.label :image4, class: '' do
-            = f.file_field :image4, class:'hidden'
-
-    = f.hidden_field :user_id ,value: params[:id]
-    = f.submit "登録する",class:"last-btn"
-
-    =link_to root_path, class:"remove__bottom" do
-      .remove
-        一覧にもどる
-
+      = f.hidden_field :user_id ,value: params[:id]
+      = f.submit "登録する",class:"form__submit"

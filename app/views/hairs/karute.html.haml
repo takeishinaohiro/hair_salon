@@ -1,63 +1,60 @@
-.xxkarute-wrap
-  .karute-content
-    .karute-top
-      =link_to users_path,class:"karute-top__left" do
-        お客様一覧
-      .karute-top__center-left
-        カルテ一覧
-      =link_to new_user_path,class:"karute-top__center-right" do
-        お客様登録
-  
-    .xkarute-wrap
-      .karute-main  
-        .karute-main__number
-          .top-left
-            <
-          .aa
-            1
-          .bb
-            2
-          .cc
-            3
-          .dd
-            4
-          .ee
-            5
-          .ff
-            6
-          .gg
-            7
-          .hh
-            8
-          .ii
-            9..
-          .top-right
-            >
-        .karute-main__top
-          件数：カルテ登録件数(1~20を表示)
-        .karute-main__main
-          -@karutes.each do |karute|
-            .karute-main__main--content
-              .karute-main__main--content--first
-                .left
-                  [ユーザーID]
-                =link_to user_path(karute.user_id),class:"right" do
-                  = karute.id
-              .karute-main__main--content--second
-                .left
-                  [氏名]
-                .right
-                  武石尚大　出ない
-                  -# - @user = User.find(user_id: karute.user_id)
-                  -#   = @user.name1
-                  -#   = @user.name2
-              .karute-main__main--content--third
-                .left
-                  [最終来店日]
-                .right
-                  = karute.day
-              .karute-main__main--content--for
-                .left
-                  [コメント]
-                .right
-                  = karute.memo1
+.wrap
+  .header
+    =link_to root_path,class:"header__tittle" do
+      Hairsalon
+    .l-drawer
+      %input#drawerCheckbox.l-drawer__checkbox{type: "checkbox"}
+      %label.l-drawer__icon{for: "drawerCheckbox"}
+        %span.l-drawer__icon-parts
+      %label.l-drawer__overlay{for: "drawerCheckbox"}
+      %nav.l-drawer__menu
+        %ul
+          %li.l-drawer__item
+            .ld-btn.mission-btn
+              =link_to users_path,class:"item-text" do
+                お客様一覧
+          %li.l-drawer__item
+            .ld-btn.service-btn
+              =link_to new_user_path,class:"item-text" do
+                お客様登録
+  .content
+    .content__tittle
+      カルテ一覧
+    -@karutes.each do |karute|
+      .content__main
+        .content__main--left
+          【日付】
+          =link_to edit_user_path(karute.id),class:"" do
+            = karute.day
+        .content__main--left
+          【非公開画像】
+          -if karute.image4 = nil
+            %span
+              ー
+          - else
+            %span
+              ◯
+        .content__main--left
+          【コメント】
+          -if karute.memo1
+            %span
+              ー
+          - else
+            %span
+              ◯
+        .content__main--left
+          【メニュー&薬剤情報】
+          -if karute.menu
+            %span
+              ー
+          - else
+            %span
+              ◯
+        .content__main--left
+          【その他】
+          -if karute.memo2
+            %span
+              ー
+          - else
+            %span
+              ◯

@@ -1,31 +1,69 @@
-.show-wrap
-  .show-content
-    .show-top
-      .show-top__left
-        お客様一覧
-      =link_to karute_hairs_path,class:"show-top__center-left" do
-        カルテ一覧
-      =link_to new_user_path,class:"show-top__center-right" do
-        お客様登録
+.wrap
+  .header
+    =link_to root_path,class:"header__tittle" do
+      Hairsalon
+    .l-drawer
+      %input#drawerCheckbox.l-drawer__checkbox{type: "checkbox"}
+      %label.l-drawer__icon{for: "drawerCheckbox"}
+        %span.l-drawer__icon-parts
+      %label.l-drawer__overlay{for: "drawerCheckbox"}
+      %nav.l-drawer__menu
+        %ul
+          %li.l-drawer__item
+            .ld-btn.mission-btn
+              =link_to karute_hairs_path,class:"item-text" do
+                カルテ一覧
+          %li.l-drawer__item
+            .ld-btn.service-btn
+              =link_to new_user_path,class:"item-text" do
+                お客様登録
+  .search
+    .search__top
+      名前検索
+    .search__bottom
+      %input{type: "text", class:"search-text"}
+      %img{src:"00002407.png",class: "search-img"}
 
-    =form_with(local: true, method: :get, class: "search-form") do |f|
-      = f.text_field :keyword, placeholder: "名前を検索する", class: "search-form__input"
-      = f.submit "探す", class: "search-btn"
-
+  .content
+    .content__top
+      .content__top--num
+        %span
+          <
+        %span
+          1
+        %span
+          2
+        %span
+          3
+        %span
+          4
+        %span
+          5
+        %span
+          6
+        %span
+          7
+        %span
+          。。
+        %span
+          300
+      .content__top--last
+        件数：4589件(1〜20件)
     - @users.each do |user|
-      .show-top__midle
-        .show-top__midle--left
-          No
-          = user.id
-        .show-top__midle--right
+      .content__main
+        .content__main--left
+          【ユーザーID】
           =link_to user_path(user.id),method: :get,class:"" do
-            .show-right-top
-              = user.name1
-              = user.name2
-          - @karutes = Hair.where(user_id: user.id).order(created_at: "desc")
+            = user.id
+        .content__main--left
+          【氏名】
+          %span
+            = user.name1
+            = user.name2
+        .content__main--left
+          【最終来店日】
+          %spa
+            - @karutes = Hair.where(user_id: user.id).order(created_at: "desc")
           - if @karutes.length != 0
             =link_to edit_user_path(@karutes[0].id),class:"" do
-              .show-right-bottom
-                = @karutes[0].day
-                    
-                    
+              = @karutes[0].day

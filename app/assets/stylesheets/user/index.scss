@@ -1,139 +1,244 @@
-.show-wrap{
-  background-image: url("/show-image.jpeg");
-  background-size: cover;
-  width: 100vw;
-  height: 100vh;
-
-  .show-content{
-    background-color: #fff;
-    width: 70%;
-    height: 100vh;
-    margin: 0 auto;
-    overflow: scroll;
-
-    .show-top{
-      width: 70%;
-      background-color: #fff;
-      height: 4.5rem;
-      position: fixed;
-      display: flex;
-
-      &__left{
-        width: 34%;
-        font-family: 'Times New Roman', Times, serif;
-        display: block;
-        line-height: 4.5rem;
-        color: #fff;
-        background-color: rgb(0, 162, 255);
-        border: rgb(12, 123, 226) 0.08rem solid;
-        text-align: center;
-        font-size: 1.3rem;
-      }
-      &__center-left{
-        width: 33%;
-        font-family: 'Times New Roman', Times, serif;
-        display: block;
-        line-height: 4.5rem;
-        color: #fff;
-        border: rgb(12, 123, 226) 0.08rem solid;
-        text-align: center;
-        font-size: 1.3rem;
-        background-color: rgba(0, 162, 255, 0.663);
-        transition: .3s;
-
-        &:hover{
-          opacity: 0.4;
-          transition: .3s;
-        
-        }
-      }
-      &__center-right{
-        width: 33%;
-        font-family: 'Times New Roman', Times, serif;
-        display: block;
-        line-height: 4.5rem;
-        color: #fff;
-        border: rgb(12, 123, 226) 0.08rem solid;
-        text-align: center;
-        font-size: 1.3rem;
-        background-color: rgba(0, 162, 255, 0.663);
-        transition: .3s;
-
-
-        &:hover{
-          opacity: 0.4;
-          transition: .3s;
-
-        }
-      }
-    }
-    .show-top__midle{
-      width: 65%;
-      margin: 2rem auto 0 ;
-      background-color: #fff;
-      border: rgb(14, 121, 221) 0.08rem solid;
-      display: flex;
-      height: 8rem;
-
-      &--left{
-        font-size: 3rem;
-        line-height: 4rem;
-        margin: 2rem;
-        font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-      }
-      &--right{
-        width: 60%;
-        margin: 0 auto;
-        text-align: center;
-        font-size: 2.0rem;
-        line-height: 6rem;
-
-        .show-right-top{
-          color: #333;
-          margin: 1rem;
-        }
-        .show-right-bottom{
-          color: #333;
-          margin: 1.5rem;
-        }
-      }
-    }
-  }
+.wrap{
+  max-width: 800px;
+  margin: 0 auto;
+  background-color: #F1F1F1;
+  padding-bottom: 20px;
 }
-.search-form{
-  margin: 6rem 5rem 0 5rem;
+.header{
+  height: 50px;
+  width: 100%;
+  background-color: #FF9898;
   display: flex;
-  
+  justify-content: space-between;
 
-  &__input{
-    width: 80%;
-    margin: 0  auto;
-    height: 40px;
-    display: block;
-    padding-left: 10px;
-    border-color: blue;
-    border-radius: 10px;
-    -webkit-border-radius: 10px;
-    -moz-border-radius: 10px;
-    -ms-border-radius: 10px;
-    -o-border-radius: 10px;
-    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
-    outline: none;
+  &__tittle{
+    color: #333;
+    font-size: 30px;
+    font-weight: bold;
+    line-height: 50px;
+    margin-left: 25px;
   }
-  .search-btn{
-    height: 40px;
-    width: 70px;
-    border-radius: 3px;
-    border: 3px solid #67c5ff;
-    color: #67c5ff;
-    transition: .4s;
-    &:hover{
-      background: #67c5ff;
-      color: white;
+  .l-drawer {
+    position: relative;
+    // inputのcheckboxは非表示
+    &__checkbox{
+      display: none;
+    }
+    // ハンバーガーアイコン
+    &__icon{
+      cursor: pointer;
+      display: block;
+      width: 56px;
+      height: 60px;
+      left: 0;
+      // ハンバーガーアイコンの中の線
+      &-parts,
+      &-parts:before,
+      &-parts:after{
+        background-color: #000;   
+        display: block;
+        width: 26px;
+        height: 2px;
+        position: absolute;
+        z-index: 100;
+        top: 0;
+        right: 0;
+        left: 0;
+        bottom: 0;
+        margin: auto;
+      }
+      &-parts:before,
+      &-parts:after{
+        content: " ";
+      }
+      &-parts:before{
+        top: 16px
+      }
+      &-parts:after{
+        top: -16px
+      }
+    }
+    
+    // ドロワーメニュー開いた時のメインエリアを暗く
+    &__overlay{
+      background: #000;
+      opacity: 0;
+      pointer-events: none; //ポインタの動作全部無効化
+      width: 100%;
+      height: 100%;
+      position: fixed;
+      top: 0;
+      left: 0;
+    }
+    
+    // ドロワーメニュー
+    &__menu{
+      background: #FF9898;
+      color: #000;
+      max-width: 100%;
+      width: 300px;
+      height: auto;
+      overflow-y: auto; //スクロール
+      -webkit-overflow-scrolling: touch; //スクロール（SP）
+      position: fixed;
+      top: 0;
+      right: -320px;
+    }
+    // z-indexの指定（1がメインエリア）
+    &__icon{
+      z-index: 4;
+    }
+    &__menu{
+      z-index: 3;
+    }
+    &__overlay{
+      z-index: 2;
+    }
+    
+    // チェックが入ったら（アイコンクリックしたら）
+    &__checkbox:checked ~ {
+      // ハンバーガーアイコン
+      .l-drawer__icon{
+        .l-drawer__icon-parts{
+          background: transparent;
+        }
+        .l-drawer__icon-parts:before{
+          -webkit-transform: rotate(-45deg);
+          transform: rotate(-45deg);
+          top: 0;
+        }
+        .l-drawer__icon-parts:after{
+          -webkit-transform: rotate(45deg);
+          transform: rotate(45deg);
+          top: 0;
+        }
+      }
+      // メインエリアを暗くする
+      .l-drawer__overlay {
+        opacity: 0.3;
+        pointer-events: auto; //ポインタの動作デフォルトに戻す
+      }
+      // メニューをだす
+      .l-drawer__menu {
+        right: 0;
+      }
+    }
+    // 動きをスムーズに
+    &__icon-parts,
+    &__icon-parts:after,
+    &__icon-parts:before,
+    &__overlay,
+    &__menu{
+      -webkit-transition: all .7s ;
+      transition: all .7s ;
     }
   }
 }
-li{
-  list-style: none;
-  margin: 0.5rem;
+
+
+.l-drawer__item{
+  text-align: center;
+  margin: 40px auto 40px;
+}
+.item-text{
+  text-align: center;
+  font-size: 20px;
+  font-weight: 500;
+}
+
+.search{
+  width: 98%;
+  padding: 10px 1%;
+  margin: 0 auto;
+
+  &__top{
+    background-color: #000000;
+    color: #fff;
+    text-align: center;
+    line-height: 40px;
+    height: 40px;
+    width: 98%;
+    font-size: 20px;
+    margin: 0 auto;
+  }
+  &__bottom{
+    height: 40px;
+    width: 98%;
+    position: relative;
+    display: block;
+    margin: 0 auto;
+    box-shadow: #333333 0px 3px 4px;
+
+    .search-text{
+      display: flex;
+      position: absolute;
+      width: 100%;
+      height: 40px;
+    }
+
+    .search-img{
+      width: 40px;
+      height: auto;
+      position: absolute;
+      line-height: 40px;
+      right: 0;
+    
+    }
+  }
+}
+
+.content{
+  background-color: #fff;
+  width: 96%;
+  margin: 0 auto;
+  height: auto;
+  padding-bottom: 5px;
+
+  &__top{
+    height: 75px;
+    width: 96%;
+    border-bottom: #707070 0.5px solid;
+    margin: 0 auto;
+    padding-top: 10px;
+
+    &--num{
+      border: 0.5px #707070 solid;
+      width: 92%;
+      height: 30px;
+      line-height: 30px;
+      display: flex;
+
+
+      span{
+        border-right: #707070 0.5px solid;
+        height: 30px;
+        display: block;
+        text-align: center;
+        padding: 0 10px;
+      }
+    }
+  }
+  &__main{
+    width: 94%;
+    height: auto;
+    background-color: #fff;
+    padding: 20px 10px 0;
+    border-bottom: #333 solid 0.5px;
+    margin: 0 auto;
+
+    &--left{
+      font-weight: 600;
+      font-size: 15px;
+      margin: 0 0 5px;
+
+      a{
+        margin-left: 15px;
+        color: #BD857B;
+        border-bottom: 1px solid #C72E13;
+      }
+      spa{
+        margin-left: 15px;
+      }
+    }
+  }
 }
