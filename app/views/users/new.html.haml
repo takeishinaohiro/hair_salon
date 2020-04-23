@@ -42,7 +42,7 @@
         .form__tittle
           生年月日
         .form__bottom
-          != sprintf(f.date_select(:birthday, class:"form__bottom--birthday",prompt:"--",use_month_numbers:true, start_year: 2020, end_year:1990,  date_separator:'%s'),'年','月')+'日'
+          != sprintf(f.date_select(:birthday, class:"form__bottom--birthday",prompt:"--",use_month_numbers:true, start_year: 2020, end_year:1950,  date_separator:'%s'),'年','月')+'日'
 
         .form__tittle
           過去に薬剤でのかぶれなどはありますか？

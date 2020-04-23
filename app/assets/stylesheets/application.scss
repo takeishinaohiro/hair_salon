@@ -28,6 +28,22 @@
  @import "./user/show";
 
 
+ .pagination > li > a {
+   border: none;
+   color: #FF9898;
+ }
+
+ .pagination>.active>a {
+  background: #FF9898;
+  color: #333;
+}
+
+.pagination>li>a:hover {
+  background: #FF9898;
+  color: #333;
+}
+
+
 
 
 

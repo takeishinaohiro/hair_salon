@@ -17,40 +17,32 @@
             .ld-btn.service-btn
               =link_to new_user_path,class:"item-text" do
                 お客様登録
-  .search
-    .search__top
-      名前検索
-    .search__bottom
-      = form_tag(search_users_path,method: :get) do
-        %img{src:"00002407.png",class: "search-img"}
-        = submit_tag 'search', name:  nil
-        = text_field_tag :search, "",class:"search-text"
 
   .content
     .content__top
-      -# .content__top--num
-      -#   %span
-      -#     <
-      -#   %span
-      -#     1
-      -#   %span
-      -#     2
-      -#   %span
-      -#     3
-      -#   %span
-      -#     4
-      -#   %span
-      -#     5
-      -#   %span
-      -#     6
-      -#   %span
-      -#     7
-      -#   %span
-      -#     。。
-      -#   %span
-      -#     300
-      -# .content__top--last
-      -#   件数：4589件(1〜20件)
+      .content__top--num
+        %span
+          <
+        %span
+          1
+        %span
+          2
+        %span
+          3
+        %span
+          4
+        %span
+          5
+        %span
+          6
+        %span
+          7
+        %span
+          。。
+        %span
+          300
+      .content__top--last
+        件数：4589件(1〜20件)
     - @users.each do |user|
       .content__main
         .content__main--left
@@ -69,4 +61,3 @@
           - if @karutes.length != 0
             =link_to edit_user_path(@karutes[0].id),class:"" do
               = @karutes[0].day
-    = paginate @users
