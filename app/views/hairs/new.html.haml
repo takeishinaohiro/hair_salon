@@ -39,14 +39,26 @@
         .form__bottom
           = f.label :image1, class: 'form__bottom--img' do
             NO IMAGE
-            = f.file_field :image1, class: 'img-file'
+          #img_field1{:onclick => "$('#file1').click()"}
+            - if @user.image1.present?
+              = image_tag(@user.image1.url)
+            - else
+              %i.fas.fa-image
+              %i.fas.fa-file-upload.add
+          = f.file_field :image1, class: "image1", style: "display:none;", id: "file1"
 
         .form__open
           Photo02
         .form__bottom
           = f.label :image2, class: 'form__bottom--img' do
             NO IMAGE
-            = f.file_field :image2, class: 'img-file'
+          #img_field2{:onclick => "$('#file2').click()"}
+            - if @user.image2.present?
+              = image_tag(@user.image2.url)
+            - else
+              %i.fas.fa-image
+              %i.fas.fa-file-upload.add
+          = f.file_field :image2, class: "image2", style: "display:none;", id: "file2"
 
         .form__tittle
           お会計金額
@@ -70,7 +82,13 @@
         .form__bottom
           = f.label :image4, class: 'form__bottom--img' do
             NO IMAGE
-            = f.file_field :image4, class:'img-file'
+          #img_field4{:onclick => "$('#file4').click()"}
+            - if @user.image4.present?
+              = image_tag(@user.image4.url)
+            - else
+              %i.fas.fa-image
+              %i.fas.fa-file-upload.add
+          = f.file_field :image4, class: "image4", style: "display:none;", id: "file4"
 
       = f.hidden_field :user_id ,value: params[:id]
       = f.submit "登録する",class:"form__submit"

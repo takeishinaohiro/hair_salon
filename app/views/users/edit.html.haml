@@ -32,10 +32,7 @@
       .form__open
         コメント
       .form__bottom
-        -if @karute.category == nil
-          ー
-        -else
-          =@karute.memo1
+        =@karute.memo1
 
       .form__bottom
         -if @karute.image1 == nil

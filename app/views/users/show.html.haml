@@ -60,7 +60,7 @@
           .content__main--left
             【非公開画像】
             %span
-              -if karute.image4 = nil
+              -if karute.image4 == nil
                 %span
                   ー
               - else
@@ -69,7 +69,7 @@
             
           .content__main--left
             【コメント】
-            -if karute.memo1
+            -if karute.memo1 == nil
               %span
                 ー
             - else
@@ -78,7 +78,7 @@
 
           .content__main--left
             【メニュー&薬剤情報】
-            -if karute.menu
+            -if karute.menu == nil
               %span
                 ー
             - else

@@ -1,5 +1,5 @@
 class User < ApplicationRecord
-  has_many :hairs
+  has_many :hairs,dependent: :destroy
 
   def self.search(search)
     return User.all unless search

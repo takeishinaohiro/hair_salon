@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_12_31_080832) do
+ActiveRecord::Schema.define(version: 2020_04_26_163030) do
 
   create_table "hairs", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "image1"
@@ -18,15 +18,15 @@ ActiveRecord::Schema.define(version: 2019_12_31_080832) do
     t.string "image3"
     t.string "image4"
     t.string "day", null: false
-    t.string "menber", null: false
     t.integer "money", null: false
     t.string "menu", null: false
     t.string "memo1", null: false
     t.string "memo2", null: false
-    t.integer "category", null: false
     t.bigint "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "category"
+    t.string "menber"
     t.index ["user_id"], name: "index_hairs_on_user_id"
   end
 

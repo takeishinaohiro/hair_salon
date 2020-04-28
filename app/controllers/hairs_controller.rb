@@ -2,7 +2,7 @@ class HairsController < ApplicationController
   def index
     @users = User.all
     @owner = @users[0]
-    @karutes = Hair.all
+    @karutes = Hair.all.page(params[:page]).per(5)
   end
 
   def karute
@@ -10,16 +10,16 @@ class HairsController < ApplicationController
   end
 
   def new
-    @karute = Hair.new
-    @user = User.find(params[:id])
+    @user = Hair.new
+    @users = User.find(params[:id])
   end
 
   def create
     @user = Hair.new(karute_params)
-    if @user.save
+    if @user.save!
       redirect_to user_path(@user.user_id)
-    else 
-      redirect_to
+    else
+      redirect_to root_path
     end
 
   end
