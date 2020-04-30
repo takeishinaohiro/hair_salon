@@ -22,35 +22,13 @@
       名前検索
     .search__bottom
       = form_tag(search_users_path,method: :get) do
-        %img{src:"00002407.png",class: "search-img"}
-        = submit_tag 'search', name:  nil
-        = text_field_tag :search, "",class:"search-text"
+        %label{for:"search"}
+          %img{src:"00002407.png",class: "search-img" }
+        = submit_tag 'search', name:  nil,id:"search",class:"search-btn"
+        = text_field_tag :search, "",class:"search-text",placeholder: "苗字を漢字で入力してください"
 
   .content
     .content__top
-      -# .content__top--num
-      -#   %span
-      -#     <
-      -#   %span
-      -#     1
-      -#   %span
-      -#     2
-      -#   %span
-      -#     3
-      -#   %span
-      -#     4
-      -#   %span
-      -#     5
-      -#   %span
-      -#     6
-      -#   %span
-      -#     7
-      -#   %span
-      -#     。。
-      -#   %span
-      -#     300
-      -# .content__top--last
-      -#   件数：4589件(1〜20件)
     - @users.each do |user|
       .content__main
         .content__main--left

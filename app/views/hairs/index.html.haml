@@ -1,53 +1,40 @@
-.index-top
-  .index-content
-    .index-content__header
-      .header-left
+.wrap-ind
+  .index-top
+    .index-content
+      .index-content__header
+        .header-left
+          Salon 
+        %ul.header-right
+        -if @owner == @current_user
+          %li
+            =link_to"スタッフ用", users_path, method: :get, class:"staf"
+
+
+      .index-content__top
+        ご来店ありがとうございました
+      .contents
+        - @karutes.reverse_each do |karute|
+          - if @karutes.length != 0
+            .content
+              =link_to open_user_path(karute.id), class: "" do
+                .content__top
+                  .content__day
+                    =karute.day
+                    来店
+      = paginate @karutes
+
+
+    .footer
+      .salon-name
         Salon Name
-      %ul.header-right
-      -if @owner == @current_user
-        %li
-          =link_to"スタッフ用", users_path, method: :get, class:"staf"
-
-
-    .index-content__top
-      ご来店ありがとうございました
-    .contents
-      - @karutes.reverse_each do |karute|
-        - if @karutes.length != 0
-          .content
-            =link_to open_user_path(karute.id), class: "" do
-              .content__top
-                .content__day
-                  =karute.day
-                .content__category
-                  -if karute.category == 1
-                    .category
-                      カテゴリー :ヘア
-                  -elsif karute.category == 2
-                    .category
-                      カテゴリー :ネイル
-                  -else karute.category == 3
-                    .category
-                      カテゴリー :アイラッシュ
-              .content__text
-                =karute.memo1
-              .content__charge
-                担当 : 
-                =karute.menber
-    = paginate @karutes
-
-
-  .footer
-    .salon-name
-      Salon Name
-    %ul.contact
-      %p
-        CONTACT US
-      %li.tel
-        0123 - 456 - 789
-      %li.mail
-        beauty.hair@mail.com
-      %li.address
-        東京都港区芝公園1-1-1
-  .copyright
-    © salon
+      %ul.contact
+        %p
+          CONTACT US
+        %li.tel
+          0123 - 456 - 789
+        %li.mail
+          beauty.hair@mail.com
+        %li.address
+          東京都港区芝公園1-1-1
+    .copyright
+      © salon

@@ -17,7 +17,7 @@ ActiveRecord::Schema.define(version: 2020_04_26_163030) do
     t.string "image2"
     t.string "image3"
     t.string "image4"
-    t.string "day", null: false
+    t.date "day", null: false
     t.integer "money", null: false
     t.string "menu", null: false
     t.string "memo1", null: false
@@ -36,7 +36,7 @@ ActiveRecord::Schema.define(version: 2020_04_26_163030) do
     t.string "read_name1", null: false
     t.string "read_name2", null: false
     t.string "tel", null: false
-    t.string "birthday", null: false
+    t.date "birthday", null: false
     t.string "station"
     t.string "magazine"
     t.string "rash"

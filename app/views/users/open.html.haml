@@ -1,64 +1,44 @@
-.edit-wrap
-  .edit-open
-    .edit-open__top
-      = @karute.day
-      の
-      情報
-    .edit-open__first
-      .edit-open__first--top
-        カテゴリ
-      .edit-open__first--bottom
-        -if @karute.category == 1
-          .category
-            ヘア
-        -elsif @karute.category == 2
-          .category
-            ネイル
-        -else @karute.category == 3
-          .category
+.wrap-ind
+  .index-top
+    .index-content
+      .index-content__header
+        =link_to root_path, class:"header-left" do
+          Salon
+      .contents
+        .contents__day
+          = @karute.day
+        .contents__memo
+          -if @karute.category == nil
+            .nil-content
+            ご来店ありがとうございました。
+          -else
+            ご来店ありがとうございました。
+            %li.second-text
+              =@karute.memo1
 
-
-    .edit-open__second
-      .edit-open__second--top
-        コメント
-      .edit-open__second--bottom
-        -if @karute.category == nil
-          .nil-content
-          ご来店ありがとうございました！
-        -else
-          ご来店ありがとうございました！
-          %li.second-text
-            =@karute.memo1
-
-
-    .edit-open__third
-      .edit-open__third--top
-        -if @karute.image1 == nil
-          .xxxxx
-        -else 
-          %img{src:@karute.image1,class:""}
-      .edit-open__third--bottom
-        Photo01
-
-        
-    .edit-open__for
-      .edit-open__for--top
-        -if @karute.image2 == nil
-          .yyyy
-        -else 
-          %img{src:@karute.image2,class:""}
-      .edit-open__for--bottom
-        Photo02
-
-
-    .edit-open__five
-      .edit-open__for--top
-        -if @karute.image2 == nil
-          .zzzz
-        -else 
-          %img{src:@karute.image2,class:""}
-      .edit-open__for--bottom
-        Photo03
-    =link_to root_path, class:"remove__bottom" do
-      .remove
-        一覧にもどる
+        .contents__img
+          -if @karute.image1 == nil
+            .none
+          -else 
+            %img{src:@karute.image1,class:"contents__img--top"}
+          -if @karute.image2 == nil
+            .none
+          -else 
+            %img{src:@karute.image2,class:"contents__img--top"}
+        =link_to root_path, class:"remove__bottom" do
+          .remove
+            一覧にもどる
+    .footer
+      .salon-name
+        Salon Name
+      %ul.contact
+        %p
+          CONTACT US
+        %li.tel
+          0123 - 456 - 789
+        %li.mail
+          beauty.hair@mail.com
+        %li.address
+          東京都港区芝公園1-1-1
+    .copyright
+      © salon

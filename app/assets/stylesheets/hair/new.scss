@@ -24,9 +24,65 @@
       color: #fff;
       text-align: center;
       line-height: 150px;
+      display: none;
     }
     // .img-file{
     //   display: none;
     // }
   }
+  &__bottom{
+
+    #img_field1{
+      width: 100%;
+      display: block;
+
+      .fa-image{
+        height: 150px;
+        width: 100%;
+        background-color: #D9D9D9;
+        font-size: 35px;
+        color: #fff;
+        display: block;
+        margin: 0 auto;
+        text-align: center;
+        line-height: 150px;
+      }
+    }
+
+    #img_field2{
+      width: 100%;
+      display: block;
+
+      .fa-image{
+        height: 150px;
+        width: 100%;
+        background-color: #D9D9D9;
+        font-size: 35px;
+        color: #fff;
+        display: block;
+        margin: 0 auto;
+        text-align: center;
+        line-height: 150px;
+      }
+    }
+    #img_field4{
+      width: 100%;
+      display: block;
+
+      .fa-image{
+        height: 150px;
+        width: 100%;
+        background-color: #D9D9D9;
+        font-size: 35px;
+        color: #fff;
+        display: block;
+        margin: 0 auto;
+        text-align: center;
+        line-height: 150px;
+      }
+    }
+  }
+}
+.fas{
+  display: none;
 }

@@ -1,22 +1,28 @@
+.wrap-ind{
+  max-width: 800px;
+  margin: 0 auto;
+  background-color: #F1F1F1;
+}
 .index-top{
   background-image: url("/top.jpeg");
-  width: 100vw;
-  height: 100vh;
+  width: 100%;
+  height: auto;
   background-size: cover;
 
   .index-content{
-    width: 70%;
-    height: 100vh;
+    width: 100%;
+    height: 80vh;
     margin: 0 auto;
-    background-color: rgba(255, 255, 255, 0.884);
+    background-color: rgba(255, 255, 255, 0.493);
     overflow: scroll;
 
     &__header{
-      height: 70px;
-      line-height: 70px;
-      padding: 0 30px 0 30px;
+      height: 60px;
+      line-height: 60px;
+      padding: 0 20px 0 20px;
       display: flex;
       background-color: #E1ECE5;
+
       .header-left{
         .salon-name{
           font-size: 20px;
@@ -47,8 +53,8 @@
 
     .content{
       margin: 1rem auto 0 ;
-      width: 70%;
-      height: 9rem;
+      width: 85%;
+      height: 7rem;
       background-color: #fff;
       text-decoration: none;
       padding: 2rem;
@@ -88,7 +94,7 @@
 }
 
     .footer{
-      height: 20vh;
+      height: 16vh;
       color: #fff;
       background-color:#333333;
       opacity: 0.8;
@@ -130,4 +136,5 @@ a{
 }
 li{
   margin-left: 30px;
+  list-style: none;
 }
