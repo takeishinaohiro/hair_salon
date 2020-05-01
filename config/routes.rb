@@ -11,10 +11,11 @@ Rails.application.routes.draw do
   root 'hairs#index'
   get     'login',   to: 'sessions#login'
   post    'login',   to: 'sessions#login'
+  
 
-  resources :hairs, only: [:index,:create,:new,] do
+  resources :hairs, only: [:create] do
     member do
-      post 'new', to: 'hairs#new'
+      get 'new', to: 'hairs#new'
     end
     collection do
       get 'karute', to: 'hairs#karute'

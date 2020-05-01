@@ -24,17 +24,22 @@
   .content
     .content__tittle
       カルテ登録
-    = form_with(model: @user, local: true) do |f|
-      -# = render 'layouts/error_messages', model: f.object
+    = form_with model: @user, local: true do |f|
       .form
+        .error-message
+          - if session[:day_error].present?
+            来店日を入力してください
         .form__open
           来店日
         .form__bottom
-          != sprintf(f.date_select(:day,class:"form__bottom--birthday", prompt:"--",use_month_numbers:true,selected: Date.today , start_year: 2020, end_year:2020),'年','月')+'日'
+          != sprintf(f.date_select(:day,class:"form__bottom--birthday", prompt:"--",use_month_numbers:true,selected: Date.today , start_year: 2020, end_year:2020, date_separator:'%s'),'年','月')+'日'
         .form__open
           コメント
+        .error-message
+          - if session[:memo1_error].present?
+            コメントを入力してください
         .form__bottom
-          = f.text_area :memo1, autocomplete: "new-password",class:"form__bottom--memo"
+          = f.text_area :memo1, autocomplete: "new-password",class:"form__bottom--memo", value:session[:memo1]
         .form__open
           Photo01
         .form__bottom
@@ -61,20 +66,29 @@
 
         .form__tittle
           お会計金額
+        .error-message
+          - if session[:money_error].present?
+            お会計金額を入力してください
         .form__bottom
-          = f.number_field :money,class:"form__bottom--tel", min: "1"
+          = f.number_field :money,class:"form__bottom--tel", min: "1", value:session[:money]
         
 
         .form__tittle
           メニュー&薬剤情報
+        .error-message
+          - if session[:menu_error].present?
+            メニュー&薬剤情報を入力してください
         .form__bottom
-          = f.text_area :menu, autocomplete: "new-password",class:"form__bottom--memo"
+          = f.text_area :menu, autocomplete: "new-password",class:"form__bottom--memo", value:session[:menu]
 
 
         .form__tittle
           その他備考
+        .error-message
+          - if session[:memo2_error].present?
+            その他備考を入力してください
         .form__bottom
-          = f.text_area :memo2, autocomplete: "new-password",class:"form__bottom--memo"
+          = f.text_area :memo2, autocomplete: "new-password",class:"form__bottom--memo", value:session[:memo2]
 
         .form__tittle
           非公開画像
