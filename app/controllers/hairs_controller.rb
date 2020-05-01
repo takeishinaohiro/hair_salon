@@ -16,16 +16,16 @@ class HairsController < ApplicationController
 
   def create
     @user = Hair.new(karute_params)
-    if @user.save!
+    if @user.save
       redirect_to user_path(@user.user_id)
     else
-      redirect_to root_path
+      redirect_to hair_path(@user.user_id)
     end
 
   end
 
   def karute_params
-    params.require(:hair).permit(:image1, :image2, :image3, :image4, :day, :menber, :money, :menu, :memo1, :memo2, :category, :user_id)
+    params.require(:hair).permit(:image1, :image2, :image3, :image4, :day, :menber, :money, :menu, :memo1, :memo2, :category ,:user_id)
   end
 
 end

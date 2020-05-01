@@ -24,7 +24,8 @@
   .content
     .content__tittle
       カルテ登録
-    = form_with(model: Hair, local: true) do |f|
+    = form_with(model: @user, local: true) do |f|
+      -# = render 'layouts/error_messages', model: f.object
       .form
         .form__open
           来店日

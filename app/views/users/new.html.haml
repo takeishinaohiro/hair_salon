@@ -20,7 +20,8 @@
   .content
     .content__tittle
       新規登録
-    = form_with(model: User, local: true) do |f|
+    = form_with(model: @user, local: true) do |f|
+      = render 'layouts/error_messages', model: f.object
       .form
         .form__tittle
           氏名　(漢字)

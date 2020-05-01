@@ -4,16 +4,16 @@ class UsersController < ApplicationController
     @user = User.new
   end
   def index
-    @users = User.all.page(params[:page]).per(2)
+    @users = User.all.page(params[:page]).per(4)
 
   end
   def create
     user_params[:birthday] = birthday_join
     @user = User.new(user_params)
-    if @user.save!
+    if @user.save
       redirect_to users_path
     else
-      redirect_to new_user_path
+      render 'users/new'
     end
   end
 
