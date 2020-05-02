@@ -4,6 +4,7 @@
       .index-content__header
         .header-left
           Salon 
+        =link_to"ログアウト", logout_path, method: :post, class:"staf"
         %ul.header-right
         -if @owner == @current_user
           %li
@@ -13,15 +14,25 @@
       .index-content__top
         ご来店ありがとうございました
       .contents
-        - @karutes.reverse_each do |karute|
-          - if @karutes.length != 0
+        - if @current_user == @owner
+          - @karutes.reverse_each do |karute|
             .content
               =link_to open_user_path(karute.id), class: "" do
                 .content__top
                   .content__day
                     =karute.day
                     来店
-      = paginate @karutes
+          = paginate @karutes
+        - if @current_user != @owner
+          - @karute_current_user.reverse_each do |karute|
+            .content
+              =link_to open_user_path(karute.id), class: "" do
+                .content__top
+                  .content__day
+                    =karute.day
+                    来店
+          = paginate @karutes
+      
 
 
     .footer

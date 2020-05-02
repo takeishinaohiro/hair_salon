@@ -11,6 +11,7 @@ Rails.application.routes.draw do
   root 'hairs#index'
   get     'login',   to: 'sessions#login'
   post    'login',   to: 'sessions#login'
+  post    'logout',  to: 'sessions#destroy'
   
 
   resources :hairs, only: [:create] do

@@ -3,6 +3,7 @@ class HairsController < ApplicationController
     @users = User.all
     @owner = @users[0]
     @karutes = Hair.all.page(params[:page]).per(5)
+    @karute_current_user = current_user.hairs.all.page(params[:page]).per(5)
   end
 
   def karute
